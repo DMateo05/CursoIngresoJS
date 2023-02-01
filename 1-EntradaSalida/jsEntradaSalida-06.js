@@ -10,11 +10,15 @@ function sumar()
 	let numeroUnoTexto; 
 	let numeroDosTexto; 
 	let mensajeNumero; 
+
 	numeroUnoTexto = document.getElementById("txtIdNumeroUno").value; 
 	numeroDosTexto = document.getElementById("txtIdNumeroDos").value; 
+
 	numeroUno = parseInt(numeroUnoTexto); 
 	numeroDos = parseInt(numeroDosTexto); 
-	mensajeNumero ="La suma es " + (numeroUno + numeroDos);
+
+	mensajeNumero ="La suma es " + (numeroUno + numeroDos); 
+	
 	alert(mensajeNumero);  
 }
 
