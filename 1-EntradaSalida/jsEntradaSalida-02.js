@@ -5,7 +5,8 @@ y luego mostrarlo por 'alert' al presionar el botón  'mostrar'*/
 function mostrar()
 {
 	let nombrePersona; 
-	nombrePersona = prompt("¿Cuál es tu nombre?") 
-    alert(nombrePersona);
-}
-
+	let apellidoPersona;  
+	nombrePersona = prompt("¿Cuál es tu nombre?"); 
+	apellidoPersona = prompt("¿Cuál es tu apellido?");
+    alert("Su nombre es " + nombrePersona + " y su apellido es " + apellidoPersona); 
+} 
