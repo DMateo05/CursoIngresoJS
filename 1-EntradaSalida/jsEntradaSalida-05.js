@@ -6,8 +6,10 @@ function mostrar()
 {	
 	let nombrePersona; 
 	let edadPersona; 
+	let mensaje; 
 	nombrePersona = document.getElementById("txtIdNombre").value; 
-	edadPersona = document.getElementById("txtIdEdad").value; 
-	alert("Usted se llama: " +  nombrePersona + " y tiene " + edadPersona);  
+	edadPersona = document.getElementById("txtIdEdad").value;  
+	mensaje = "Usted se llama: " + nombrePersona + " y tiene " + edadPersona;
+	alert(mensaje);  
 }
 
