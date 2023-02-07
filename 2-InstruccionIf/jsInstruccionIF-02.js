@@ -10,7 +10,7 @@ function mostrar()
 	// Asigno las Condicionales 
 	if(edad >= ageCondicional)
 	{
-		alert(mensaje)
+		alert(mensaje);
 	}
 
 	// Fin Ejercicio 
