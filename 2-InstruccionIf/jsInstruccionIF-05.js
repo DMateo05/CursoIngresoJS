@@ -1,6 +1,14 @@
+// Devita Mateo 
+// Al ingresar una edad solo debemos informar si la persona NO es adolescente.
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
+	let edad = parseInt(document.getElementById("txtIdEdad").value); 
+	let mensaje = "Usted no es Adolescente";
+	
+	if(edad < 13 || edad > 17)
+	{
+		alert(mensaje);
+	} 
 
-}//FIN DE LA FUNCIÓN
+	// Fin Ejercicio 
+}
