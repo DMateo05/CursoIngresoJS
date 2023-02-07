@@ -4,7 +4,7 @@ function mostrar()
 {	
 	// Declaro Variables
 	let edad = parseInt(document.getElementById("txtIdEdad").value); 
-	let mensaje 
+	let mensaje; 
 
 	// Declaro Condicionales 
 	if(edad >= 13 && edad <= 17)
