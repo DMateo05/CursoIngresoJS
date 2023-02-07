@@ -16,6 +16,6 @@ function mostrar()
 		mensaje = "Usted tiene menos de 18 Años."
 	}
 	alert(mensaje); 
-	
+
 	// Fin Ejercicio 
 }
