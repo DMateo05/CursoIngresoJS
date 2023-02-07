@@ -1,7 +1,17 @@
+// Devita Mateo 
+// Ejercicio : Al ingresar una edad debemos informar solo si la persona es mayor de edad
 function mostrar()
-{
-	//tomo la edad  
-	alert("ok");
-	
+{ 
+	// Declaro Variables
+	let edad = parseInt(document.getElementById("txtIdEdad").value); 
+	let mensaje = "Usted Es Mayor de Edad"; 
+	let ageCondicional = 18; 
 
-}//FIN DE LA FUNCIÓN
+	// Asigno las Condicionales 
+	if(edad >= ageCondicional)
+	{
+		alert(mensaje)
+	}
+
+	// Fin Ejercicio 
+} 
