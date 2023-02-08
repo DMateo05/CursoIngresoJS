@@ -1,6 +1,13 @@
+// Devita Mateo 
+// Al presionar el Botón, mostrar un número Random del 1 al 10 inclusive
 function mostrar()
 {
-	//Genero el número RANDOM entre 1 y 10 
-	alert("ok");	
+	// Declaro Variables
+	let numero = (Math.floor(Math.random() * (10) + 1)); 
+	let mensaje = "Un número aleatorio: "; 
 
-}//FIN DE LA FUNCIÓN
+	// Muestro el Mensaje 
+	alert(mensaje + numero); 
+
+	// Fin Ejercicio 
+}
