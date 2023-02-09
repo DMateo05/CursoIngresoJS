@@ -1,10 +1,22 @@
+/* 
+Devita Mateo 
+al seleccionar un mes informar.
+si es Febrero: " Este mes no tiene más de 29 días."
+si NO es Febrero: "Este mes tiene 30 o más días"*/ 
 function mostrar()
 {
-	//tomo el mes
-	var mesDelAño =txtIdMes.value;
-	alert(mesDelAño);
-	
-	
+	let mesDelAño; 
+	let mensaje; 
 
+	mesDelAño = document.getElementById("txtIdMes").value; 
 
-}//FIN DE LA FUNCIÓN
+	switch(mesDelAño)
+	{
+		case "Febrero": 
+			mensaje = "Este mes no tiene mas de 29 Dias"; 
+			break; 
+		default: 
+			mensaje = "Este mes tiene 30 dias o mas";
+	} 
+	alert(mensaje); 
+}
