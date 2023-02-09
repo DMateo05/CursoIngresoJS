@@ -25,6 +25,7 @@ function CalcularPrecio()
     let impuesto; 
     let aumento = 10; 
     let precioImpuesto; 
+    let mensaje; 
 
     lamparitas = parseInt(document.getElementById("txtIdCantidad").value); 
     empresa = document.getElementById("Marca").value; 
@@ -50,7 +51,7 @@ function CalcularPrecio()
     }else if(lamparitas == 3){
         if(empresa == "ArgentinaLuz"){
             porcentaje = 15;
-        }else if(empresa = "FelipeLamparas"){
+        }else if(empresa == "FelipeLamparas"){
             porcentaje = 10; 
         }else{ 
             porcentaje = 5; 
@@ -68,6 +69,8 @@ function CalcularPrecio()
     if(precioFinal >= 120){
         impuesto = precioFinal*aumento/100; 
         precioImpuesto = precioFinal + aumento; 
+        mensaje = "Usted pago $" + impuesto + " de IIBB, siendo $" + precioImpuesto + " el impuesto que se pago.";
+        alert(mensaje); 
     }
     document.getElementById("txtIdprecioDescuento").value = precioFinal; 
 }
