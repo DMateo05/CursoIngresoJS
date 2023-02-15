@@ -1,19 +1,40 @@
-/*
+/* 
+Devita Mateo
 Al presionar el botón pedir  números  hasta que el usuario quiera,
 sumar los que son positivos y multiplicar los negativos.*/
 function mostrar()
 {
-	var contador;
-	var respuesta;
-	var sumaPositivos;
-	var multiplicacionNegativos;
+	let contador;
+	let respuesta; 
+	let numeroIngresado; 
+	let sumaPositivos;
+	let multiplicacionNegativos; 
+	 
+
 	contador=0;
 	sumaPositivos=0;
 	multiplicacionNegativos=1;
-	respuesta='si';
+	respuesta='si'; 
 
+	while(respuesta == 'si')
+	{
+		numeroIngresado = parseInt(prompt("Ingrese Numero")); 
+		contador = contador + 1 
+		while(isNaN(numeroIngresado))
+		{
+			numeroIngresado = parseInt(prompt("Error, Ingrese Numero"));
+		} 
 
-	txtIdSuma.value=sumaPositivos;
-	txtIdProducto.value=multiplicacionNegativos;
+		if(numeroIngresado > 0)
+		{
+			sumaPositivos = sumaPositivos + numeroIngresado; 
+		}else
+		{
+			multiplicacionNegativos = numeroIngresado*multiplicacionNegativos; 
+		} 
+		respuesta = prompt("desea continuar? si/no") 
+	} // Fin While
 
-}//FIN DE LA FUNCIÓN
+	document.getElementById("txtIdSuma").value= sumaPositivos;
+	document.getElementById("txtIdProducto").value= multiplicacionNegativos;
+}
