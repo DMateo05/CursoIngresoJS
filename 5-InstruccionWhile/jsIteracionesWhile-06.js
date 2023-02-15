@@ -20,18 +20,23 @@ function mostrar()
 	// for (variable para iterar ; condicion ; aumento/decremento), en este caso no se inicializa la variable i. 
 	// el bucle finito for no existe en Phyton!!. 
 
-	while(i < 5) // While Principal 
+	while(i < 5)
 	{
 		i = i + 1; 
-		numeroUno = parseInt(prompt("Ingrese un Numero")); 
+		numeroUno = prompt("Ingrese un Numero"); 
+		numeroUno = parseInt(numeroUno); 
+
 		while(isNaN(numeroUno)) // Validacion 
 		{
-			numeroUno = parseInt(prompt("Error,Ingrese un Numero")); 
+			numeroUno = prompt("Error,Ingrese un Numero"); 
+			numeroUno = parseInt(numeroUno); 
 		} 
+
 		contador = contador + 1; 
-		acumulador = acumulador + numeroIngresado
+		acumulador = acumulador + numeroUno;
 	} // Fin While. Promedio dentro del while no se se hace. 
 	
+	// Calculo Promedio
 	promedio = acumulador/contador; 
 
 	document.getElementById("txtIdSuma").value = acumulador; 
