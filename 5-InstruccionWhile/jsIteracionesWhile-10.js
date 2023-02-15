@@ -1,4 +1,5 @@
-/*
+/* 
+Devita Mateo
 Al presionar el botón pedir  números  
 hasta que el usuario quiera, mostrar:
 1-Suma de los negativos.
@@ -13,17 +14,69 @@ hasta que el usuario quiera, mostrar:
 function mostrar()
 {
 	//declarar contadores y variables 
-	var respuesta;
-	var numeroIngresado;
-	var sumaNegativos=0;
+	let respuesta;
+	let numeroIngresado;
+	let sumaNegativos; 
+	let sumaPositivo; 
+	let contadorPositivos; 
+	let contadorNegativos; 
+	let contadorCeros; 
+	let contadorPares; 
+	let promedioPositivos;  
+	let promedioNegativo; 
+	let diferencia; 
+	
+
+	contadorPositivos = 0; 
+	contadorNegativos = 0; 
+	contadorCeros = 0; 
+	contadorPares = 0; 
+	sumaPositivo = 0; 
+	sumaNegativos = 0; 
 
 	respuesta="si";
 
 	while(respuesta=="si")
 	{
-		
-		respuesta=prompt("desea continuar?");
-	}//fin del while
+		numeroIngresado = parseInt(prompt("Ingrese un numero")); 
+		//respuesta=prompt("desea continuar? Si/No"); 
+		while(isNaN(numeroIngresado)) // Validacion
+		{
+			numeroIngresado = parseInt(prompt("Error, Ingrese un numero")); 
+		} 
 
-	document.write("la suma de negativos es :"+sumaNegativos);
+		if(numeroIngresado < 0){ 
+			// Punto 1 y 4
+			sumaNegativos = sumaNegativos + numeroIngresado; 
+			contadorNegativos = contadorNegativos + 1; 
+		}else if(numeroIngresado > 0){ 
+			// Punto 2 y 3
+			sumaPositivo = sumaPositivo + numeroIngresado; 
+			contadorPositivos = contadorPositivos + 1;
+		}else{
+			contadorCeros = contadorCeros + 1; 
+		} 
+
+		if(numeroIngresado%2 == 0)
+		{
+			contadorPares = contadorPares + 1;
+		}
+
+		respuesta=prompt("desea continuar? si/no");
+	}//fin del while 
+
+	promedioPositivos = sumaPositivo/contadorPositivos; 
+	promedioNegativo = sumaNegativos/contadorNegativos; 
+	diferencia = sumaPositivo - sumaNegativos;
+
+	document.write("la suma de negativos es :"+sumaNegativos+ "<br>"); 
+	document.write("la suma de positivos es :"+sumaPositivo+ "<br>"); 
+	document.write("la cantidad de positivos es :"+contadorPositivos+ "<br>"); 
+	document.write("la cantidad de negativos es :"+contadorNegativos+ "<br>");  
+	document.write("la cantidad de ceros es :"+contadorCeros+ "<br>"); 
+	document.write("la cantidad de pares es :"+contadorPares+ "<br>"); 
+	document.write("promedio de positivos es :"+promedioPositivos+ "<br>"); 
+	document.write("promedio de negativos es :"+promedioNegativo+ "<br>"); 
+	document.write("diferencia entre positivos y negativos es :"+diferencia + "<br>"); 
+	//document.write("la cantidad de ceros es :"+contadorCeros+ "<br>"); 
 }//FIN DE LA FUNCIÓN
