@@ -11,7 +11,7 @@ F ) El mayor de los numeros impares
 G ) El mayor de los numeros  */
 function mostrar()
 {
-	// While genera la linea de codigo muchas veces / Bucle Infinito 
+	/* // While genera la linea de codigo muchas veces / Bucle Infinito 
 	// Que es un Bucle? Es una Iteración 
 	// Iteracion = Que se puede generar esa linea de codigo muchas veces 
 	// for = Bucle de Iteracion / Cantidad finita de veces 
@@ -80,5 +80,55 @@ function mostrar()
 	alert("El total de los numeros pares es: " + acumuladorPares); 
 	alert("El mayor numero impar es: " + mayorNumeroImpar); 
 	alert("El mayor de los numeros pares es:" + mayorNumeroPar); 
-	alert("El numero mayor es: " + mayorNumero); 
+	alert("El numero mayor es: " + mayorNumero); */ 
+
+	// WHILE 1 BIS EJERCICIO 
+	let edad; 
+	let nombre; 
+	let respuesta; 
+	let bandera; 
+	let edadMaximo; 
+	let edadMinimo; 
+	let nombreMaximo; 
+	let nombreMenor; 
+	let mensaje; 
+
+	edad = 0;
+	respuesta = "si"; 
+	bandera = true; 
+
+	while(respuesta == "si")
+	{  
+		nombre = prompt("Ingrese su Nombre"); 
+		edad = parseInt(prompt("Ingrese su Edad")); 
+		while(isNaN(edad) || edad < 0 || edad > 123)
+		{
+			edad = parseInt(prompt("Error, Ingrese su Edad")); 
+		}
+		
+		if(bandera == true)
+		{
+			edadMaximo = edad; 
+			edadMinimo = edad; 
+			nombreMaximo = nombre 
+			nombreMenor = nombre; 
+			bandera = false; 
+		}else if(edadMaximo < edad)
+		{ 
+			nombreMaximo = nombre;
+			edadMaximo = edad; 
+		}else if(edadMinimo > edadMaximo)
+		{
+			nombreMenor = nombre;
+			edadMinimo = edad; 
+		}
+		
+		respuesta = prompt("Quiere continuar? si/no?") 
+	}  
+	mensaje = "El nombre del mas joven es: " + nombreMenor 
+	mensaje += " y la edad es: " + edadMinimo 
+	mensaje += " y el nombre del mayor es: " + nombreMaximo 
+	mensaje += " y su edad es: " + edadMaximo; 
+	alert(mensaje); 
+	// FIN WHILE 1 BIS EJERCICIO 
 }
