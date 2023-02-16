@@ -19,7 +19,7 @@ function mostrar()
 	números que son mayores que 10 y menores 20 (inclusive en ambos casos) */  
 
 	// Declaro Variables 
-	let numeroUno; 
+	/*let numeroUno; 
 	let contador; 
 	let segundoContador; 
 	let acumulador; 
@@ -62,6 +62,52 @@ function mostrar()
 	} // Fin While. Promedio dentro del while no se se hace. 
 	mensaje = "Cantidad numeros entre 11 y 19: " + segundoContador 
 	mensaje += " y la Cantidad restante: " + contador; 
-	alert(mensaje); 
+	alert(mensaje); */
 	// Fin ejercicio 2 BIS 
+
+	// Inicio Ejercicio 2 BISBIS 
+	// Declaro Variables 
+	let numeroUno; 
+	let contador; 
+	let segundoContador; 
+	let acumulador; 
+	let promedio; 
+	let respuesta; 
+	let bandera
+	let i; // Es una variable 
+
+	// Inicializo Variables
+	acumulador = 0; 
+	i = 0;
+	contador = 0; 
+	segundoContador = 0; 
+	numeroUno = 0; 
+	respuesta = "si"; 
+	
+	while(respuesta == "si") 
+	{
+		i = i + 1; 
+		numeroUno = prompt("Ingrese un Numero"); 
+		numeroUno = parseInt(numeroUno); 
+
+		while(isNaN(numeroUno)) // Validacion 
+		{
+			numeroUno = prompt("Error,Ingrese un Numero"); 
+			numeroUno = parseInt(numeroUno); 
+		} 
+
+		if(numeroUno > 9 && numeroUno < 20)
+		{
+			segundoContador = segundoContador + 1; 
+		}else 
+		{
+			contador = contador + 1; 
+			acumulador = acumulador + numeroUno;	
+		}	
+		respuesta = prompt("Desea continuar? si/no");
+	}
+
+	mensaje = "Cantidad numeros entre 11 y 19: " + segundoContador 
+	mensaje += " y la Cantidad restante: " + contador; 
+	alert(mensaje); 
 }
