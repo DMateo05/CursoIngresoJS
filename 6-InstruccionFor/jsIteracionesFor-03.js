@@ -1,8 +1,13 @@
+// Devita Mateo 
+// al presionar el botón pedir la cantidad de veces que quiero repetir el mensaje "Hola UTN FRA"
 function mostrar()
 {
+	let repeticiones; 
+	
+	repeticiones = parseInt(prompt("Ingrese cantidad")); 
 
-	var repetciones = prompt("ingrese el número de repeticiones");
-	alert("ok");
-
-
-}//FIN DE LA FUNCIÓN
+	for(i = 0; i < repeticiones;i++)
+	{
+		alert("Hola UTN FRA"); 
+	}
+}
