@@ -2,15 +2,19 @@
 Devita Mateo
 Realizar el algoritmo que permita ingresar los datos de una compra de productos de la construccion, hasta que el cliente quiera:
 Tipo validad("arena";"cal";"cemento")
-Cantidad de bolsas,
-Precio por bolsa (más de cero ),
+Cantidad de bolsas(0-300),
+Precio por bolsa (más de cero y menor a 10000 ),
 al terminar la compra el cliente accede a un descuento segun las bolsas en total
-Si compro más de 10 bolsas en total tenes 15% de descuento sobre el total a pagar.
-Si compro más de 30 bolsas en total tenes 25% de descuento sobre el total a pagar.
-a) El importe total a pagar , bruto sin descuento y...
-b) el importe total a pagar con descuento(solo si corresponde)
-d) Informar el tipo ("arena";"cal";"cemento") con mas cantidad de bolsas en el total de la compra.
-f) El tipo mas caro 
+Si compro más de 15 bolsas en total tenes 10% de descuento sobre el total a pagar.
+Si compro más de 45 bolsas en total tenes 30% de descuento sobre el total a pagar.
+a)
+El importe total a pagar , bruto sin descuento y...
+b)
+el importe total a pagar con descuento(solo si corresponde)
+d)
+Informar la bolsa mas cara de Cal y la mas barata de Cemento.
+e)
+Cuantas bolsas de arena se compraron en total, y el promedio por compra.
 */
 function mostrar()
 {
@@ -97,13 +101,22 @@ function mostrar()
   } // FIN WHILE 
 
 
+    if(contadorArena > contadorCal && contadorArena > contadorCemento)
+    {
+        tipoMasCaro = "Arena"
+    }else if(contadorCal > contadorCemento && contadorCal >= contadorArena)
+    {
+        tipoMasCaro = "Cal"
+    }else{
+        tipoMasCaro = "Cemento"
+    }
   // Calculo la cantidad de bolsas introducidas para aplicar el descuento 
-  if(cantidadBolsa > 29)
+  if(cantidadBolsa > 44)
   {
-      descuentoAplicado = -25;  
-  }else if(cantidadBolsa > 9)
+      descuentoAplicado = -30;  
+  }else if(cantidadBolsa > 14)
   {
-      descuentoAplicado = -15; 
+      descuentoAplicado = -10; 
   }else
   {
       descuentoAplicado = 0; 
