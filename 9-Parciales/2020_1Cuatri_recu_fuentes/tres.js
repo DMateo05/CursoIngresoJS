@@ -14,6 +14,7 @@ function mostrar()
 	let acumuladorHombresSolteros; 
 	let calculoPromedioEdad;  
 	let respuesta; 
+	let nacionalidad;
 
 	banderaTemperatura = true; 
 	cantidadHombresViudos = 0; 
@@ -52,9 +53,16 @@ function mostrar()
 			temperaturaCorporal = parseFloat(prompt("Error, Ingrese su temperatura corporal")); 
 		} 
 
+		nacionalidad = prompt("Ingrese su nacionalidad (argentino/extranjero/nacionalizado)"); 
+		while(nacionalidad != "argentino" && nacionalidad != "ectranjero" && nacionalidad != "nacionalizado")
+		{
+			nacionalidad = prompt("Error, Ingrese su nacionalidad (argentino/extranjero/nacionalizado)"); 
+		} 
+		
+
 		if(banderaTemperatura == true || personaMasTemperatura < temperaturaCorporal)
 		{
-			personaMasTemperatura = nombreIngresado; 
+			personaMasTemperatura = nacionalidad; 
 			banderaTemperatura = false; 
 		}
 
@@ -100,6 +108,20 @@ function mostrar()
 				acumuladorHombresSolteros = acumuladorHombresSolteros + edadIngresada; 
 				}  
 				break;
+			case "soltero": 
+				if(edadIngresada > 17)
+				{
+					cantidadMayoresEdadViudos = cantidadMayoresEdadViudos + 1; 
+				}  
+
+				if(sexoIngresado == "f")
+				{
+				contadorHombresSolteros = contadorHombresSolteros + 1;  
+				cantidadHombresViudos = cantidadHombresViudos + 1;  
+				acumuladorHombresSolteros = acumuladorHombresSolteros + edadIngresada; 
+				}  
+				break; 
+		
 		} 
 
 		if(edadIngresada > 59 && temperaturaCorporal > 37)
