@@ -117,458 +117,206 @@ function mostrar()
 	document.write("La cantidad de mayores de edad que estan viudos es: " + contadorMayoresEdadViudos + "<br>"); 
 	document.write("La cantidad de hombres que hay solteros o viudos es: " + contadorHombresSolterosViudos  + "<br>");
 	document.write("La cantidad de personas de tercera edad que tiene mas de 38 temperatura corporal es: " + contadorTerceraEdadTemperatura + "<br>");
-	document.write("El promedio de edad entre los hombres solteros es:" + promedioHombresSolteros); */ // FINALIZA EJERCICIO 
+	document.write("El promedio de edad entre los hombres solteros es:" + promedioHombresSolteros); */ // FINALIZA EJERCICIO 	
 
-	/*  // INICIA EJERCICIO
-	* Apellido: Devita
-	* Nombre: Mateo
-	* Comisión: B
-	* Tutor: Matias Bustamante
-	* 
-	Ejercicio 1
-	La Premier League de Inglaterra necesita un sistema capaz de reunir las estadisticas de los 
-	jugadores que la integran.
-	Para ellos se pide realizar una app.
-
-	Se debe ingresar por cada jugador
-
-	-Nombre del jugador
-	-Nacionalidad
-	-Posición (Arquero, Defensor, Mediocampista o Delantero)
-	-Cantidad de Tarjetas Rojas recibidas
-	-Goles 
-
-	Se necesita saber
-
-	a)El goleador del torneo
-	b)El jugador Argentino con menos rojas recibidas.
-	c)El porcentaje de jugadores Ingleses de la liga
-
-	NOTA: Deben poder ingresarse todos números positivos, no se deben pueden ingresar números negativos.
-	*/ 
-
-	/*let respuesta; 
-	let nombreJugador; 
-	let nacionalidad; 
-	let posicionJugador; 
-	let cantidadTarjetasRojas; 
-	let golesIngresados; 
-
-	let banderaGoleadorTorneo; 
-	let mayorGoleadorTorneo; 
-	let contadorTarjetasRojas; 
-	let banderaJugadorMenosRojas; 
-	let jugadorMenosRojasTorneo; 
-	let cantidadRojasJugadorMenosRojas; 
-	let contadorJugadoresIngleses; 
-	let contadorJugadoresArgentina;
-	let contadorJugadoresLiga; 
-	let promedioIngleses; 
-
-	banderaGoleadorTorneo = true; 
-	respuesta = "si"; 
-	contadorTarjetasRojas = 0; 
-	banderaJugadorMenosRojas = true; 
-	contadorJugadoresIngleses = 0; 
-	contadorJugadoresLiga = 0; 
-	contadorJugadoresArgentina = 0; 
-
-	while(respuesta == "si")
-	{
-		nombreJugador = prompt("Ingrese su nombre");  
-
-		nacionalidad = prompt("Ingrese su pais (Inglaterra/Europa/Argentina/Otro"); 
-		
-		posicionJugador = prompt("Ingrese su posicion (Arquero, Defensor, Mediocampista o Delantero)"); 
-		while(posicionJugador != "Arquero" &&  posicionJugador != "Defensor" && posicionJugador != "Mediocampista" && posicionJugador != "Delantero")
-		{
-			posicionJugador = prompt("Error, Ingrese su posicion (Arquero, Defensor, Mediocampista o Delantero)");
-		} 
-
-		cantidadTarjetasRojas = parseInt(prompt("Ingrese la cantidad de tarjetas rojas")); 
-		while(isNaN(cantidadTarjetasRojas))
-		{
-			cantidadTarjetasRojas = parseInt(prompt("Error, Ingrese la cantidad de tarjetas rojas")); 
-		} 
-
-		golesIngresados = parseInt(prompt("Ingrese la cantidad de goles marcados")); 
-		while(isNaN(golesIngresados))
-		{
-			golesIngresados = parseInt(prompt("Ingrese la cantidad de goles marcados"));
-		} 
-
-		contadorJugadoresLiga = contadorJugadoresLiga + 1; 
-
-		switch(nacionalidad)
-		{
-			case "Inglaterra": 
-				contadorJugadoresIngleses = contadorJugadoresIngleses + 1;  
-				if(contadorJugadoresIngleses == 0)
-				{
-					promedioIngleses = "No hay jugadores Ingleses en la liga";
-				}else
-				{
-					promedioIngleses = contadorJugadoresLiga/contadorJugadoresIngleses; 
-				}
-				promedioIngleses = contadorJugadoresLiga/contadorJugadoresIngleses; 
-				break; 
-			case "Argentina": 
-				if(banderaJugadorMenosRojas == true || cantidadTarjetasRojas < cantidadTarjetasRojas)
-				{
-					jugadorMenosRojasTorneo = nombreJugador; 
-					cantidadRojasJugadorMenosRojas = cantidadTarjetasRojas; 
-					banderaJugadorMenosRojas = false; 
-				}
-				break; 	
-		} 
-
-		respuesta = prompt("Desea seguir ingresando Jugadores? si/no")
-	} // Fin WHILE 
-
-	if(banderaGoleadorTorneo == true || golesIngresados > golesIngresados)
-	{
-		mayorGoleadorTorneo = nombreJugador; 
-		banderaGoleadorTorneo = false;
-	} 
-
-	document.write("El goleador del torneo es: " + mayorGoleadorTorneo + "<br>"); 
-	document.write("El argentino con menos cantidad rojas es: " + jugadorMenosRojasTorneo + " con: " + cantidadRojasJugadorMenosRojas + "<br>"); 
-	document.write("El promedio de jugadores ingleses es: " + promedioIngleses);  
-	// FIN EJERCICIO SABADOS 25-02 I */ 
-
-	/* // INICIA EJERCICIO 
-	* Apellido: Devita
-	* Nombre: Mateo
-	* Comisión: B
-	* Tutor: Matias Bustamante 
-	
-	Ejercicio 2
-
-	Dr. Gregory Cat (Diagnostico Veterinario)
-	Para el hospital de mascotas: Princeton-Plainsboro de Nueva Jersey.
-
-	Es necesario registrar el ingreso de las mascotas al hospital, para esto hay que considerar
-	los siguientes datos y encasillarlos en ciertos diagnósticos para poder derivarlos adecuadamente:
-
-	Nombre de la mascota
-	Edad (Validar 1 - 20)
-	Tipo: (Validar “gato”, “perro”, “hamster”)
-	Peso: (Más de 0)
-	Diagnostico: (Validar “problemas digestivos”, “otitis”, “alergias en la piel”, “parasitos”, 
-	“picazon de abeja”)
-	Vacuna antirrábica (validar “si”, ”no”)
-
-	Informes:
-
-	a) Nombre de la mascota más vieja con la vacuna antirrábica
-	b) Cantidad de mascotas sin vacuna antirrábica y con parásitos
-	c) El tipo de mascota con más ingresos por problemas digestivos.
-	d) Nombre, edad y diagnóstico de la mascota más joven ingresada.
-	e) Cantidad de perros ingresados por otitis. 
-	*/ 
-
-	/*let nombreMascota; 
-	let edadIngresada; 
-	let tipoMascota; 
-	let pesoMascota; 
-	let respuesta; 
-	let diagnosticoMascota; 
-	let vacunaAntirrabica; 
-
-	let banderaMascotaMasVieja; 
-	let nombreMascotaMasViejaConAntirrabica; 
-	let edadMascotaMasViejaConAntirrabica; 
-	let cantidadMascotasSinVacunaParasitos; 
-	let banderaMascotaMasJoven; 
-	let nombreMascotaMasJovenIngresada; 
-	let edadMascotaMasJovenIngresada; 
-	let diagnosticoMascotaMasJovenIngresada; 
-	let cantidadPerrosOtitis; 
-	let tipoMayorProblemasDigestivos; 
-
-	let cantidadGatosDigestivos = 0; 
-	let cantidadPerrosDigestivos = 0;
-	let cantidadHamsterDigestivos = 0;
-
-	respuesta = "si"; 
-	banderaMascotaMasVieja = true; 
-	banderaMascotaMasJoven = true;  
-	cantidadPerrosOtitis = 0; 
-	cantidadMascotasSinVacunaParasitos = 0; 
-
-	while(respuesta == "si")
-	{
-		nombreMascota = prompt("Ingrese nombre de la mascota"); 
-
-		edadIngresada = parseInt(prompt("Ingrese edad mascota (Entre 1 a 20 años)"));
-		while(isNaN(edadIngresada) || edadIngresada < 1 || edadIngresada > 20)
-		{
-			edadIngresada = parseInt(prompt("Error, Ingrese edad mascota (Entre 1 a 20 años)"));
-		} 
-
-		tipoMascota = prompt("ingrese Tipo Mascota (gato/hamster/perro)");
-		while(tipoMascota != "perro" && tipoMascota != "gato" && tipoMascota != "hamster")
-		{
-			tipoMascota = prompt("ingrese Tipo Mascota (gato/hamster/perro)");
-		} 
-
-		pesoMascota = parseFloat(prompt("Ingrese el peso de su mascota (Mas de 0)")); 
-		while(isNaN(pesoMascota) || pesoMascota < 0)
-		{
-			pesoMascota = parseFloat(prompt("Error,Ingrese el peso de su mascota (Mas de 0)")); 
-		} 
-
-		diagnosticoMascota = prompt("Ingrese diagnostico su mascota (problemas digestivos/otitis/alergias en la piel/parasitos/picazón de abeja)");
-		while(diagnosticoMascota != "problemas digestivos" && diagnosticoMascota != "otitis" && diagnosticoMascota != "alergias en la piel" && diagnosticoMascota != "parasitos" && diagnosticoMascota != "picazón de abeja")
-		{
-			diagnosticoMascota = prompt("Error, Ingrese diagnostico su mascota (problemas digestivos/otitis/alergias en la piel/parasitos)");
-		} 
-
-		vacunaAntirrabica = prompt("Tiene vacuna antirrabica? si/no");
-		while(vacunaAntirrabica != "si" && vacunaAntirrabica != "no")
-		{
-			vacunaAntirrabica = prompt("Error, Tiene vacuna antirrabica? si/no")
-		} 
-
-		switch(vacunaAntirrabica)
-		{
-			case "si": 
-				if(banderaMascotaMasVieja == true || edadIngresada < edadIngresada)
-				{
-					nombreMascotaMasViejaConAntirrabica = nombreMascota; 
-					edadMascotaMasViejaConAntirrabica = edadIngresada; 
-					banderaMascotaMasVieja = false; 
-				} 
-				break; 
-			case "no": 
-				if(diagnosticoMascota == "parasitos")
-				{
-					cantidadMascotasSinVacunaParasitos = cantidadMascotasSinVacunaParasitos + 1; 
-				} 
-				break;
-		}
-
-		switch(tipoMascota)
-		{
-			case "gato": 
-				if(diagnosticoMascota == "problemas digestivos")
-				{
-					cantidadGatosDigestivos = cantidadGatosDigestivos + 1; 
-				}
-				break; 
-			case "perro": 
-				if(diagnosticoMascota == "problemas digestivos")
-				{
-					cantidadPerrosDigestivos = cantidadPerrosDigestivos + 1; 
-				} 
-
-				if(diagnosticoMascota == "otitis")
-				{
-					cantidadPerrosOtitis = cantidadPerrosOtitis + 1;
-				}
-				break; 
-			case "hamster":
-				if(diagnosticoMascota == "problemas digestivos")
-				{
-					cantidadHamsterDigestivos = cantidadHamsterDigestivos + 1; 
-				}
-				break; 
-		} 
-
-		if(banderaMascotaMasJoven == true || edadIngresada < edadIngresada)
-		{
-			nombreMascotaMasJovenIngresada = nombreMascota; 
-			edadMascotaMasJovenIngresada = edadIngresada; 
-			diagnosticoMascotaMasJovenIngresada = diagnosticoMascota; 
-			banderaMascotaMasJoven = false; 
-		}
-		respuesta = prompt("Desea seguir ingresando mascotas? si/no"); 
-	} // FIN WHILE
-
-	if(cantidadGatosDigestivos > cantidadPerrosDigestivos && cantidadGatosDigestivos > cantidadHamsterDigestivos)
-	{
-		tipoMayorProblemasDigestivos = "Gato";
-	}else if(cantidadPerrosDigestivos > cantidadHamsterDigestivos && cantidadPerrosDigestivos >= cantidadGatosDigestivos)
-	{
-		tipoMayorProblemasDigestivos = "Perro";
-	}else
-	{
-		tipoMayorProblemasDigestivos = "Hamster";
-	} 
-
-	document.write("El nombre de la mascota mas vieja con vacuna antirrabica es: " + nombreMascotaMasViejaConAntirrabica + "<br>"); 
-	document.write("La cantidad de mascotas sin Antirrabica con Parasitos es: " + cantidadMascotasSinVacunaParasitos + "<br>"); 
-	document.write("El tipo de Mascota con mas Ingresos por problemas digestivos es: " + tipoMayorProblemasDigestivos + "<br>");  
-	document.write("La cantidad de perros que tienen Otitis es: " + cantidadPerrosOtitis); */
-	// FIN EJERCICIO 2 25-02 SABADOS 
-
-	/* // INICIA EJERCICIO
-	* Apellido: Devita 
-	* Nombre: Mateo
-	* Comisión: B
-	* Tutor: Matias Bustamante
-	
-	Ejercicio 3
-
-	Una fabrica de muebles nos pide realizar una app para gestionar sus productos. 
-	El programa pide dar de alta cada venta realizada (Cada venta representa un mueble 
-	en particular, con los atributos definidos mas abajo).
-
-	Se debe ingresar en cada venta.
-	-Nombre del mueble
-	-Material del mueble (Madera, Metal y Vidrio)
-	-Peso
-	-Altura
-	-Anchura 
-	-Precio
-
-	Debido a la tala excesiva de árboles el gobierno pone un impuesto del 15% ante la compra de 
-	muebles de madera.
-	Los muebles de vidrio o metal tienen un 10% de descuento.
-
-	Se pide
-
-	a)Precio promedio por mueble vendido
-	b)Cantidad total de muebles de madera
-	c)El mueble de metal más alto 
-	d)El mueble más liviano
-	e)Porcentaje de muebles de cada tipo de material
-	f)Monto total recaudado bruto de todos los muebles (sin descuentos ni impuestos)
-	g)Monto total recaudado, pero solo de los muebles de madera(incluido descuentos e impuestos)
-
-	NOTA: Los precios no podran ser cero ni negativo. 
-	*/ // A TERMINAR 
-
+	// INICIO EJERCICIO 3 PARCIAL BIS 
 	/* 
-	Devita Mateo EJERCICIO 3 RECUPERATORIO 2020 
-	En el ingreso a un viaje en avión nos solicitan nombre, nacionalidad , edad, sexo("f" o "m") y estado civil("soltero", "casado" o "viudo")y temperatura corporal.
-	a) la Nacionalidad de la persona con mas temperatura.
-	b) Cuantos mayores de edad( más de 17) estan solteros
-	c) La cantidad de Mujeres que hay solteras o viudas.
-	d) cuantas personas de la tercera edad( mas de 60 años) , tienen mas de 38 de temperatura
-	e) El promedio de edad entre las mujeres casadas.
-	*/ 
+	"Mapa Mundi"
+	Realizar el algoritmo que permita ingresar 5 paises:
 
-	/*let respuesta; // INICIA EJERCICIO 
-	let nombrePersona; 
-	let edadPersona; 
-	let sexoIngresado; 
-	let estadoCivil; 
-	let temperaturaCorporal; 
-	let nacionalidadPersona; 
+	el continente (validar entre America , Asia , Europa ,Africa y Oceania) 
 
-	let banderaPersonaConMasTemperatura; 
-	let personaConMasTemperatura; 
-	let edadPersonaConMasTemperatura; 
-	let temperaturaPersonaConMasTemperatura; 
-	let nacionalidadPersonaConMasTemperatura; 
-	let contadorMayoresEdadViudos; 
-	let contadorMujeresSolterasViudas; 
-	let contadorTerceraEdadTemperatura; 
-	let acumuladorEdadMujeresCasadas; 
-	let contadorMayoresEdadSolteros; 
-	let contadorMujeresCasadas; 
-	let promedioMujeresCasadas;
+	el nombre del país, 
 
-	contadorMayoresEdadViudos = 0; 
-	contadorMujeresCasadas = 0;
-	contadorMujeresSolterasViudas = 0; 
-	contadorTerceraEdadTemperatura = 0; 
-	acumuladorEdadMujeresCasadas = 0; 
-	contadorMayoresEdadSolteros = 0; 
-	respuesta = "si"; 
-	banderaPersonaConMasTemperatura = true; 
+	cantidad de habitantes en millones entre 1 y 7000 (validar)
 
-	while(respuesta == "si")
-	{
-		nombrePersona = prompt("Ingrese su nombre");  
+	el nivel de pobresa entre (pobre, rico, millonario) en europa no hay paises pobre(validar)
 
-		nacionalidadPersona = prompt("Ingrese su nacionalidad");
-		
-		edadPersona = parseInt(prompt("Ingrese su edad (Entre 0 a 123 Años)")); 
-		while(isNaN(edadPersona) || edadPersona < 0 || edadPersona > 123)
+	la temperaruta mínima que se registra en su territorio(entre -50 y 50) 
+
+	a)La cantidad de temperaturas pares.
+	b)la cantidad de temperaturas impares de europa
+	c)El nombre del pais con menos habitantes
+	d)la cantidad de paises que superan los 40 grados.
+	e)la cantidad de paises de america que tienen menos de 0 grados .
+	f)el promedio de habitantes entre los paises ingresados .
+	g)el promedio de habitantes entre los paises que superan los 40 grados
+	H) la temperatura mínima ingresada, y nombre del pais que registro esa temperatura. 
+	i) que continente tiene mas habitantes.*/ 
+ 
+	/*let continenteIngresado; 
+	let nivelPobreza; 
+    let cantidadHabitantes; 
+    let temperaturaMinima; 
+    let nombrePais; 
+
+	let acumuladorTemperaturasPares; 
+	let acumuladorTemperaturasImparesEuropa; 
+
+	let banderaPaisMenosHabitantes; 
+	let paisMenosHabitantes; 
+	let cantidadHabitantesMenorPais; 
+	let contadorPaisesCuarentaGrados; 
+	let contadorPaisesAmericaBajoCero; 
+	let acumuladorHabitantesPaises; 
+	let contadorTotalPaises; 
+	let promedioHabitantesPaises; 
+	let acumuladorPaisesCuarentaGrados; 
+	let promedioPaisesCuarentaGrados; 
+	let banderaMinimaTemperatura; 
+	let nombrePaisMinimaTemperatura; 
+	let temperaturaPaisMenorTemperatura; 
+
+	let acumuladorHabitantesEuropa; 
+	let acumuladorHabitantesAmerica; 
+	let acumuladorHabitantesAfrica; 
+	let acumuladorHabitantesAsia; 
+	let acumuladorHabitantesOceanida; 
+
+	let continenteMasHabitantes; 
+	let cantidadGenteContinenteMasHabitantes; 
+
+	acumuladorTemperaturasPares = 0; 
+	acumuladorTemperaturasImparesEuropa = 0; 
+	banderaPaisMenosHabitantes = true; 
+	contadorPaisesCuarentaGrados = 0; 
+	contadorPaisesAmericaBajoCero = 0; 
+	acumuladorHabitantesPaises = 0; 
+	banderaMinimaTemperatura = true; 
+	acumuladorPaisesCuarentaGrados = 0; 
+	contadorTotalPaises = 0; 
+
+	acumuladorHabitantesAmerica = 0; 
+	acumuladorHabitantesAsia = 0; 
+	acumuladorHabitantesEuropa = 0; 
+	acumuladorHabitantesAfrica = 0; 
+	acumuladorHabitantesOceanida = 0; 
+	
+    for(let i = 0;i < 5;i++)
+    { 
+
+        nombrePais = prompt("Ingrese el nombre del Pais"); 
+
+        continenteIngresado = prompt("Ingrese el continente (America/Asia/Europa/Africa/Oceanida)");
+        while(continenteIngresado != "America" && continenteIngresado != "Asia" && continenteIngresado != "Europa"  && continenteIngresado != "Africa" && continenteIngresado != "Oceanida")
+        {
+            continenteIngresado = prompt("Ingrese el continente (America/Asia/Europa/Africa/Oceanida)")
+        }  
+
+        cantidadHabitantes = parseInt(prompt("Ingrese la cantidad de habitantes (Entre 1 a 7000 Millones)"));
+        while(isNaN(cantidadHabitantes) || cantidadHabitantes < 1|| cantidadHabitantes > 7000)
+        {
+            cantidadHabitantes = parseInt(prompt("Error, Ingrese la cantidad de habitantes (Entre 1 a 7000 Millones)"));
+        } 
+
+        temperaturaMinima = parseFloat(prompt("Ingrese la temperatura de la zona (Entre -50 y 50 grados)"));
+        while(isNaN(temperaturaMinima) || temperaturaMinima < -50 || temperaturaMinima > 50)
+        {
+            temperaturaMinima = parseFloat(prompt("Error, Ingrese la temperatura de la zona (Entre -50 y 50 grados)"));
+        } 
+
+		nivelPobreza = prompt("Ingrese el nivel de pobreza (Rico/Millonario/Pobre)");
+        while(nivelPobreza != "Rico" && nivelPobreza != "Millonario" && nivelPobreza != "Pobre" || nivelPobreza == "Pobre" && continenteIngresado == "Europa")
+        {
+            nivelPobreza = prompt("Error, Ingrese el nivel de pobreza (Rico/Millonario/Pobre)"); 
+
+        }  
+
+		acumuladorHabitantesPaises = acumuladorHabitantesPaises + cantidadHabitantes; 
+		contadorTotalPaises = contadorTotalPaises + 1; 
+
+		if(temperaturaMinima%2 == 0)
 		{
-			edadPersona = parseInt(prompt("Error,Ingrese su edad (Entre 0 a 123 Años)"));
+			acumuladorTemperaturasPares = acumuladorTemperaturasPares + 1; 
 		} 
 
-		sexoIngresado = prompt("Ingrese su Sexo. 'f' si es mujer, 'm' si es hombre o 'b' si es binario."); 
-		while(!isNaN(sexoIngresado) || sexoIngresado != "f" && sexoIngresado != "m" && sexoIngresado != "b")
+		switch(continenteIngresado)
 		{
-			sexoIngresado = prompt("Error, Ingrese su Sexo. 'f' si es mujer, 'm' si es hombre o 'b' si es binario.");
-		} 
-
-		estadoCivil = prompt("Ingrese su estado civil (soltero/casado/viudo)");
-		while(estadoCivil != "soltero" && estadoCivil != "casado" && estadoCivil != "viudo")
-		{
-			estadoCivil = prompt("Error,Ingrese su estado civil (soltero/casado/viudo)");
-		} 
-
-		temperaturaCorporal = parseFloat(prompt("Ingrese su temperatura corporal (Entre 32 a 50"));
-		while(isNaN(temperaturaCorporal) || temperaturaCorporal < 32 || temperaturaCorporal > 50)
-		{
-			temperaturaCorporal = parseFloat(prompt("Error, Ingrese su temperatura corporal (Entre 32 a 50"));
-		} 
-
-		switch(estadoCivil)
-		{
-			case "casado": 
-				if(sexoIngresado == "f")
+			case "Europa": 
+				acumuladorHabitantesEuropa = acumuladorHabitantesEuropa + cantidadHabitantes;
+				if(temperaturaMinima%2 == 1)
 				{
-					acumuladorEdadMujeresCasadas = acumuladorEdadMujeresCasadas + edadPersona; 
-					contadorMujeresCasadas = contadorMujeresCasadas + 1; 
+					acumuladorTemperaturasImparesEuropa = acumuladorTemperaturasImparesEuropa + 1; 
 				}
 				break; 
-			case "soltero": 
-				// PUNTO B 
-				if(edadPersona > 17) 
-				{ 
-					contadorMayoresEdadSolteros = contadorMayoresEdadSolteros + 1; 
-				} 
-
-				// PUNTO C
-				if(sexoIngresado == "f")
+			case "America": 
+				acumuladorHabitantesAmerica = acumuladorHabitantesAmerica + cantidadHabitantes;
+				if(temperaturaMinima < 0)
 				{
-					contadorMujeresSolterasViudas = contadorMujeresSolterasViudas + 1; 
+					contadorPaisesAmericaBajoCero = contadorPaisesAmericaBajoCero + 1; 
 				}
 				break; 
-			case "viudo": 
-				// PUNTO C 
-				if(sexoIngresado == "f")
-				{
-					contadorMujeresSolterasViudas = contadorMujeresSolterasViudas + 1;
-				}
+			case "Africa": 
+				acumuladorHabitantesAfrica = acumuladorHabitantesAfrica + cantidadHabitantes; 
 				break; 
-		} // Fin Switch 
+			case "Asia":
+				acumuladorHabitantesAsia = acumuladorHabitantesAsia + cantidadHabitantes;  
+				break; 
+			case "Oceanida": 
+				acumuladorHabitantesOceanida = acumuladorHabitantesOceanida + cantidadHabitantes; 
+				break;
+		}  
 
-		// PUNTO D
-		if(edadPersona > 59 && temperaturaCorporal > 37)
+		if(banderaPaisMenosHabitantes == true || cantidadHabitantesMenorPais > cantidadHabitantes)
 		{
-			contadorTerceraEdadTemperatura = contadorTerceraEdadTemperatura + 1;
+			paisMenosHabitantes = nombrePais; 
+			cantidadHabitantesMenorPais = cantidadHabitantes; 
+			banderaPaisMenosHabitantes = false; 
+		} 
+
+		if(temperaturaMinima > 39)
+		{
+			contadorPaisesCuarentaGrados = contadorPaisesCuarentaGrados + 1; 
+			acumuladorPaisesCuarentaGrados = acumuladorPaisesCuarentaGrados + cantidadHabitantes; 
+
+		} 
+
+		if(banderaMinimaTemperatura == true || temperaturaPaisMenorTemperatura > temperaturaMinima)
+		{
+			nombrePaisMinimaTemperatura = nombrePais; 
+			temperaturaPaisMenorTemperatura = temperaturaMinima; 
+			banderaMinimaTemperatura = false; 
 		}
+	} // FIN FOR 
 
-		// PUNTO A 
-		if(banderaPersonaConMasTemperatura == true || temperaturaCorporal > temperaturaCorporal)
-		{
-			personaConMasTemperatura = nombrePersona; 
-			edadPersonaConMasTemperatura = edadPersona; 
-			nacionalidadPersonaConMasTemperatura = nacionalidadPersonaConMasTemperatura;
-			temperaturaPersonaConMasTemperatura = temperaturaCorporal; 
-			banderaPersonaConMasTemperatura = false; 
-		}
+	promedioHabitantesPaises = acumuladorHabitantesPaises/contadorTotalPaises; 
 
-		respuesta = prompt("Desea seguir ingresando Datos? si/no"); 
-	} // Fin WHile 
-
-	promedioMujeresCasadas =  acumuladorEdadMujeresCasadas/contadorMujeresCasadas; 
-	if(contadorMujeresCasadas == 0)
+	if(contadorPaisesCuarentaGrados == 0)
 	{
-		promedioMujeresCasadas = "No hubo hombres solteros ingresados"; 
+		promedioPaisesCuarentaGrados = "NO SE REGISTRARON PAISES DE MAS DE 40 GRADOS";
+	}else{
+		promedioPaisesCuarentaGrados = acumuladorPaisesCuarentaGrados/contadorPaisesCuarentaGrados; 
 	}
 
-	document.write("La nacionalidad de la persona con mas temperatura corporal es: " + nacionalidadPersonaConMasTemperatura + ", tiene de edad: " + edadPersonaConMasTemperatura + ", tiene un total de: " + temperaturaPersonaConMasTemperatura + " grados" + "<br>"); 
-	document.write(" y el nombre de la persona con mas temperatura es: " + personaConMasTemperatura + "<br>"); // PUNTO A 
-	document.write("La cantidad de mayores de edad que estan solteros es: " + contadorMayoresEdadSolteros + "<br>"); // PUNTO B 
-	document.write("La cantidad de mujeres que estan solteras o viudas es: " + contadorMujeresSolterasViudas + "<br>"); // PUNTO C
-	document.write("La cantidad de personas de tercera edad que tiene mas de 38 temperatura corporal es: " + contadorTerceraEdadTemperatura + "<br>"); // PUNTO D
-	document.write("El promedio de edad de mujeres casadas es: " + promedioMujeresCasadas + "<br>"); // PUNTO E . */ // FIN EJERCICIO 
+	if(acumuladorHabitantesEuropa > acumuladorHabitantesAmerica && acumuladorHabitantesEuropa > acumuladorHabitantesAsia && acumuladorHabitantesEuropa > acumuladorHabitantesAfrica && acumuladorHabitantesEuropa > acumuladorHabitantesOceanida)
+	{
+		continenteMasHabitantes = "Europa"; 
+		cantidadGenteContinenteMasHabitantes = acumuladorHabitantesEuropa; 
+	}else if(acumuladorHabitantesAmerica > acumuladorHabitantesAsia && acumuladorHabitantesAmerica > acumuladorHabitantesAfrica && acumuladorHabitantesAmerica > acumuladorHabitantesOceanida)
+    {
+		continenteMasHabitantes = "America" 
+		cantidadGenteContinenteMasHabitantes = acumuladorHabitantesAmerica; 
+    }else if(acumuladorHabitantesAsia > acumuladorHabitantesAfrica && acumuladorHabitantesAsia > acumuladorHabitantesOceanida)
+    { 
+		continenteMasHabitantes = "Asia" 
+		cantidadGenteContinenteMasHabitantes = acumuladorHabitantesAsia;
+    }else if(acumuladorHabitantesAfrica > acumuladorHabitantesAsia && acumuladorHabitantesAfrica >= acumuladorHabitantesOceanida)
+    {
+        continenteMasHabitantes = "Africa" 
+		cantidadGenteContinenteMasHabitantes = acumuladorHabitantesAfrica;
+    }else
+    {
+        continenteMasHabitantes = "Oceanida" 
+		cantidadGenteContinenteMasHabitantes = acumuladorHabitantesOceanida;
+    } 
+
+	document.write("La cantidad de temperaturas pares es: " + acumuladorTemperaturasPares + "<br>"); 
+	document.write("La cantidad de temperaturas impares en Europa es: " + acumuladorTemperaturasImparesEuropa + "<br>"); 
+	document.write("El nombre del pais con menos habitantes es: " + paisMenosHabitantes + " y tiene: " + cantidadHabitantesMenorPais + " millones" + "<br>"); 
+	document.write("La cantidad de paises que superan los 40 grados es: " + contadorPaisesCuarentaGrados + "<br>");
+	document.write("La cantidad de paises de America que tienen menos de 0 grados es: " + contadorPaisesAmericaBajoCero + "<br>"); 
+	document.write("El promedio de habitantes entre los paises ingresados es: " + promedioHabitantesPaises + " millones" +"<br>"); 
+	document.write("El promedio de habitantes de los paises que superan los 40 grados es:" + promedioPaisesCuarentaGrados + " millones" + "<br>");
+	document.write("El pais con menos temperatura es: " + nombrePaisMinimaTemperatura + " y se registro: " + temperaturaPaisMenorTemperatura + " grados" + "<br>");
+	document.write("El continente con mayor cantidad de habitantes es: " + continenteMasHabitantes + " y tiene: " + cantidadGenteContinenteMasHabitantes + " millones" + "<br>"); */
 }

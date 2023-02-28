@@ -14,7 +14,7 @@ e)Cuantas bolsas de arena se compraron en total, y el promedio por compra.
 */
 function mostrar() 
 {
-    let respuesta; 
+    /*let respuesta; 
     let tipoProducto; 
     let cantidadBolsas; 
     let precioPorBolsa; 
@@ -118,5 +118,130 @@ function mostrar()
     document.write("El importe total a pagar sin descuento es: $" + acumuladorPrecio + "<br>"); 
     document.write(mensaje); 
     document.write("La bolsa mas cara de cal es: $" + precioBolsaMasCaroCal + " y la bolsa mas barata de cemento es: $" + bolsaMasBarataCemento + "<br>"); 
-    document.write("Se compraron: " + acumuladorBolsasArena + " bolsas de arena en total y el promedio de compra es: " + promedioBolsasArena);
+    document.write("Se compraron: " + acumuladorBolsasArena + " bolsas de arena en total y el promedio de compra es: " + promedioBolsasArena); */ 
+
+    /*
+    "El cine"
+    De un cine se deben ingresar una cantidad indeterminada 
+    de venta de entradas diaria, validando los
+    siguientes datos:
+    nombre de película, precio, cantidad de entradas, tipo(3D o 4D)
+    a)El nombre de la película más cara de tipo 4D.
+    b)Informar el precio total de la venta del día.
+    c)El nombre de la película con menos cantidad de entradas.
+    d)El tipo de pelicula más vista y la cantidad de entradas. 
+    e)El nombre de la pelicula más barata en 3D.  
+    */ 
+
+    let nombrePelicula; 
+    let precioPelicula; 
+    let cantidadEntradas; 
+    let tipoPelicula; 
+
+    let banderaPeliculaMasCara4D; 
+    let nombrePeliculaMasCara4D; 
+    let precioPeliculaMasCara4D; 
+
+    let acumuladorPrecioEntradas; 
+
+    let banderaPeliculaMenosEntradas; 
+    let nombrePeliculaMenosEntradas; 
+    let cantidadEntradasMenorPelicula; 
+    
+    let contadorPelicula3D; 
+    let contadorEntradasPelicula3D;
+    let contadorPelicula4D; 
+    let contadorEntradasPelicula4D; 
+
+    let banderaPeliculaBarata3D; 
+    let nombrePeliculaBarata3D; 
+    let precioPeliculaBarata3D; 
+
+    let respuesta; 
+    let mayorTipoVisto; 
+
+    banderaPeliculaMasCara4D = true; 
+    banderaPeliculaMenosEntradas = true; 
+    banderaPeliculaBarata3D = true; 
+
+    acumuladorPrecioEntradas = 0; 
+    contadorPelicula3D = 0; 
+    contadorPelicula4D = 0; 
+    contadorEntradasPelicula3D = 0; 
+    contadorEntradasPelicula4D = 0;
+    respuesta = "si"; 
+
+
+    while(respuesta == "si")
+    {
+        nombrePelicula = prompt("Ingrese Nombre de la Pelicula"); 
+
+        precioPelicula = parseFloat(prompt("Ingrese precio de la pelicula (Entre 1 a 1000")); 
+        while(isNaN(precioPelicula) || precioPelicula < 1 || precioPelicula > 100)
+        {
+            precioPelicula = parseFloat(prompt("Error, Ingrese precio de la pelicula (Entre 1 a 1000")); 
+        } 
+
+        cantidadEntradas = parseInt(prompt("Ingrese la cantidad de entradas (Entre 1 a 100)")); 
+        while(isNaN(cantidadEntradas) || cantidadEntradas < 1 || cantidadEntradas > 100)
+        {
+            cantidadEntradas = parseInt(prompt("Ingrese la cantidad de entradas (Entre 1 a 100)")); 
+        } 
+
+        tipoPelicula = prompt("Ingrese el tipo de pelicula (3D/4D)"); 
+        while(tipoPelicula != "3D" && tipoPelicula != "4D")
+        {
+            tipoPelicula = prompt("Error, Ingrese el tipo de pelicula (3D/4D)"); 
+        } 
+
+        acumuladorPrecioEntradas = acumuladorPrecioEntradas + (precioPelicula * cantidadEntradas);  
+
+        switch(tipoPelicula)
+        {
+            case "3D": 
+                contadorPelicula3D = contadorPelicula3D + 1; 
+                contadorEntradasPelicula3D = contadorEntradasPelicula3D + cantidadEntradas;
+
+                if(banderaPeliculaBarata3D == true || precioPeliculaBarata3D > precioPelicula)
+                {
+                    nombrePeliculaBarata3D = nombrePelicula; 
+                    precioPeliculaBarata3D = precioPelicula; 
+                    banderaPeliculaBarata3D = false; 
+                }
+                break; 
+            case "4D": 
+                contadorPelicula4D = contadorPelicula4D + 1; 
+                contadorEntradasPelicula4D = contadorEntradasPelicula4D + cantidadEntradas; 
+                
+                if(banderaPeliculaMasCara4D == true || precioPeliculaMasCara4D < precioPelicula)
+                {
+                    nombrePeliculaMasCara4D = nombrePelicula; 
+                    precioPeliculaMasCara4D = precioPelicula; 
+                    banderaPeliculaMasCara4D = false; 
+                }
+                break;
+        } 
+
+        if(banderaPeliculaMenosEntradas == true || cantidadEntradasMenorPelicula > cantidadEntradas)
+        {
+            nombrePeliculaMenosEntradas = nombrePelicula; 
+            cantidadEntradasMenorPelicula = precioPelicula; 
+            banderaPeliculaMenosEntradas = false; 
+        }
+        
+        respuesta = prompt("Quiere seguir ingresando entradas? si/no"); 
+    } // FIN WHILE 
+
+    if(contadorPelicula3D > contadorPelicula4D)
+    {
+        mayorTipoVisto = "El mayor tipo de pelicula visto fue en: 3D, con un total de: " + contadorEntradasPelicula3D + " entradas" + "<br>"; 
+    }else{
+        mayorTipoVisto = "El mayor tipo de pelicula visto fue en: 4D, con un total de: " + contadorEntradasPelicula4D + " entradas" + "<br>";
+    } 
+
+    document.write("La pelicula mas cara en 4D es: " + nombrePeliculaMasCara4D + " y el precio es : $" + precioPeliculaMasCara4D + "<br>"); 
+    document.write("La venta total de entradas recaudo: " + acumuladorPrecioEntradas + "<br>"); 
+    document.write("El nombre de la pelicula con menos cantidad entradas es: " + nombrePeliculaMenosEntradas + " con: " + cantidadEntradasMenorPelicula + " entradas" + "<br>"); 
+    document.write(mayorTipoVisto); 
+    document.write("El nombre de la pelicula mas barata en 3D es: " + nombrePeliculaBarata3D + " y cuesta: $" + precioPeliculaBarata3D); 
 }
