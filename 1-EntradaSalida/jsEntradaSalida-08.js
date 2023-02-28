@@ -34,12 +34,13 @@ function SacarResto()
 	//numeroUno=parseInt(document.getElementById("txtIdNumeroDividendo").value); 
 	//numeroDos=parseInt(document.getElementById("txtIdNumeroDivisor").value); 
 
-	//resultadoSuma=(numeroUno+numeroDos); 
-	//resultadoPromedio=(resultadoSuma/2); 
-	//resto=(numeroUno % numeroDos); 
+	//resultadoSuma=numeroUno+numeroDos; 
+	//resultadoPromedio=resultadoSuma/2; 
+	//resto=numeroUno % numeroDos; 
 
 	//alert("La suma da: " + resultadoSuma); 
 	//alert("El promedio es: " + resultadoPromedio); 
 	//alert("El resto es: " + resto); 
-	// Fin Ejercicio 8BIS
+	// Fin Ejercicio 8BIS 
+	
 }

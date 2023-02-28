@@ -38,17 +38,18 @@ function mostrar()
 			}else{
 				porcentaje = 20; 
 			} 
-			break 
+			break;
 		case "Otoño": 
 		case "Primavera": 
-			if(destino == "Bariloche" || destino == "Cataratas" || destino == "Mar del plata"){
+			if(destino != "Cordoba"){
 				porcentaje = 10; 
 			}else{
 				porcentaje = 0; 
 			} 
 			break; 
-	} 
-	calculoPrecio = precioBase*(porcentaje/100); 
+	} // Fin Switch 
+	
+	calculoPrecio = precioBase*porcentaje/100; 
 	totalPagar = precioBase + calculoPrecio; 
 	mensaje = "Se tendra que pagar $" + totalPagar; 
 	alert(mensaje); 

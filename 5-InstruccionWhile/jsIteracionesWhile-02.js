@@ -23,7 +23,6 @@ function mostrar()
 	let contador; 
 	let segundoContador; 
 	let acumulador; 
-	let promedio; 
 	let i; // Es una variable 
 
 	// Inicializo Variables
@@ -48,7 +47,7 @@ function mostrar()
 			numeroUno = parseInt(numeroUno); 
 		} 
 
-		if(numeroUno > 10 && numeroUno < 20)
+		if(numeroUno > 9 && numeroUno < 21)
 		{
 			segundoContador = segundoContador + 1; 
 		}else 
@@ -60,12 +59,14 @@ function mostrar()
 		//contador = contador + 1; 
 		//acumulador = acumulador + numeroUno;
 	} // Fin While. Promedio dentro del while no se se hace. 
-	mensaje = "Cantidad numeros entre 11 y 19: " + segundoContador 
+	mensaje = "Cantidad numeros entre 10 y 20: " + segundoContador 
 	mensaje += " y la Cantidad restante: " + contador; 
 	alert(mensaje); */
 	// Fin ejercicio 2 BIS 
 
 	// Inicio Ejercicio 2 BISBIS 
+	// Ingresar numeros hasta que el usuario quiera. Determinar la cantidad de números que son mayores que 10 y menores 20 (inclusive en ambos casos). 
+	// También el promedio de los números que cumplen la condición anterior.
 	// Declaro Variables 
 	let numeroUno; 
 	let contador; 
@@ -73,12 +74,11 @@ function mostrar()
 	let acumulador; 
 	let promedio; 
 	let respuesta; 
-	let bandera
+	let mensajePromedio; 
 	let i; // Es una variable 
 
 	// Inicializo Variables
 	acumulador = 0; 
-	i = 0;
 	contador = 0; 
 	segundoContador = 0; 
 	numeroUno = 0; 
@@ -86,7 +86,6 @@ function mostrar()
 	
 	while(respuesta == "si") 
 	{
-		i = i + 1; 
 		numeroUno = prompt("Ingrese un Numero"); 
 		numeroUno = parseInt(numeroUno); 
 
@@ -96,18 +95,24 @@ function mostrar()
 			numeroUno = parseInt(numeroUno); 
 		} 
 
-		if(numeroUno > 9 && numeroUno < 20)
+		if(numeroUno > 9 && numeroUno < 21)
 		{
 			segundoContador = segundoContador + 1; 
+			acumulador = acumulador + numeroUno; 
 		}else 
 		{
-			contador = contador + 1; 
-			acumulador = acumulador + numeroUno;	
+			contador = contador + 1; 	
 		}	
+		//acumulador = acumulador + numeroUno; 
 		respuesta = prompt("Desea continuar? si/no");
 	}
 
-	mensaje = "Cantidad numeros entre 11 y 19: " + segundoContador 
+	calculoPromedio = contador + segundoContador 
+	promedio = acumulador/calculoPromedio; 
+	mensaje = "Cantidad numeros entre 10 y 20: " + segundoContador 
 	mensaje += " y la Cantidad restante: " + contador; 
+	mensajePromedio = "El promedio es: " + promedio; 
 	alert(mensaje); 
+	alert(mensajePromedio);   
+	// FIN EJERCICIO 2 BIS BIS 
 }

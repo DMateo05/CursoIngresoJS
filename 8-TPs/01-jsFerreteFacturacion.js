@@ -46,7 +46,7 @@ function Promedio ()
     precio3=parseInt(txtPrecioTres); 
 
     resultadoSuma=(precio1+precio2+precio3); 
-    resultadoPromedio="El promedio es: " + (resultadoSuma/3); 
+    resultadoPromedio="El promedio es: " + resultadoSuma/3; 
     alert(resultadoPromedio); 
 }
 function PrecioFinal () 
@@ -70,8 +70,8 @@ function PrecioFinal ()
     precio2=parseInt(txtPrecioDos);
     precio3=parseInt(txtPrecioTres); 
 
-    resultadoPrecio=(precio1+precio2+precio3); 
-    calculoIva=(resultadoPrecio*porcentaje/100); 
+    resultadoPrecio=precio1+precio2+precio3; 
+    calculoIva=resultadoPrecio*porcentaje/100; 
     resultadoIva="El precio Final es: " + (resultadoPrecio+calculoIva); 
 
     alert(resultadoIva);

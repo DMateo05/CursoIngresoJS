@@ -10,11 +10,11 @@ function mostrar()
 		// Pedir un numero 
 		numero = parseInt(prompt("Ingrese un numero")); 
 		
-		for(let i=1; i <= numero;i++)
+		for(let i=1; i < numero;i++)
 		{
 			if(numero%i == 0)
 			{
-				contadorDivisores++; 
+				contadorDivisores = contadorDivisores + 1;
 				alert(i);
 			} 
 		} 

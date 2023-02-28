@@ -13,8 +13,8 @@ function Rectangulo ()
     let perimetro; 
     let alambre; 
 
-    ancho=parseInt(document.getElementById("txtIdAncho").value); 
-    largo=parseInt(document.getElementById("txtIdLargo").value);  
+    ancho=parseFloat(document.getElementById("txtIdAncho").value); 
+    largo=parseFloat(document.getElementById("txtIdLargo").value);  
 
     perimetro=(largo*2+ancho*2); 
     alambre="La cantidad de alambre que se necesita: " + (perimetro*3); 

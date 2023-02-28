@@ -83,6 +83,7 @@ function mostrar()
 	alert("El numero mayor es: " + mayorNumero); */ 
 
 	// WHILE 1 BIS EJERCICIO 
+	// edad y nombre , informar el nombre de la persona mas vieja y la mas joven
 	let edad; 
 	let nombre; 
 	let respuesta; 
@@ -100,6 +101,10 @@ function mostrar()
 	while(respuesta == "si")
 	{  
 		nombre = prompt("Ingrese su Nombre"); 
+		while(!isNaN(nombre))
+		{
+			nombre = prompt("Error, ingrese su nombre"); 
+		}
 		edad = parseInt(prompt("Ingrese su Edad")); 
 		while(isNaN(edad) || edad < 0 || edad > 123)
 		{
@@ -129,6 +134,6 @@ function mostrar()
 	mensaje += " y la edad es: " + edadMinimo 
 	mensaje += " y el nombre del mayor es: " + nombreMaximo 
 	mensaje += " y su edad es: " + edadMaximo; 
-	alert(mensaje); 
+	document.write(mensaje); 
 	// FIN WHILE 1 BIS EJERCICIO 
 }

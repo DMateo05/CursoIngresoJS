@@ -15,128 +15,115 @@ f) El tipo mas caro
 function mostrar()
 {
     let respuesta; 
-    let tipoBolsa; 
+    let tipoProducto; 
     let cantidadBolsas; 
-    let precioIngresado; 
+    let precioPorBolsa; 
+
     let porcentaje; 
-    let totalPagar; 
-    let precioCal; 
-    let cantidadCal; 
-    let precioCemento; 
-    let cantidadCemento; 
-    let precioArena; 
-    let cantidadArena; 
-    let acumuladorCantidadBolsas; 
-    let mayorCantidadBolsas; 
-    let mayorPrecioBolsas;  
-    let calculoDescuento; 
-    let totalDescuento; 
     let acumuladorPrecio; 
-    
-    respuesta = "si"; 
-    precioCal = 0; 
-    cantidadCal = 0; 
-    precioCemento = 0; 
-    cantidadCemento = 0; 
-    precioArena = 0; 
-    cantidadArena = 0; 
-    acumuladorCantidadBolsas = 0;  
+    let acumuladorBolsas; 
+    let contadorTotalArena; 
+    let contadorTotalCal; 
+    let contadorTotalCemento; 
+    let precioBolsaMasCaro; 
+    let tipoBolsaMasCaro; 
+    let banderaBolsaMasCaro; 
+    let mensaje; 
+    let importeTotalDescuento; 
+    let mayorCantidadBolsas; 
+
     acumuladorPrecio = 0; 
-    
+    acumuladorBolsas = 0; 
+    contadorTotalArena = 0; 
+    contadorTotalCal = 0; 
+    contadorTotalCemento = 0; 
+    banderaBolsaMasCaro = true;  
+    respuesta = "si"; 
+
     while(respuesta == "si")
     {
-        tipoBolsa = prompt("Ingrese el tipo de Bolsa(arena/cal/cemento)"); 
-        while(!isNaN(tipoBolsa) || tipoBolsa != "arena" && tipoBolsa != "cal" && tipoBolsa != "cemento")
+        tipoProducto = prompt("Ingrese el tipo de producto (arena/cal/cemento)"); 
+        while(tipoProducto != "arena" && tipoProducto != "cal" && tipoProducto != "cemento")
         {
-            tipoBolsa = prompt("Error,Ingrese el tipo de Bolsa(arena/cal/cemento)");
+            tipoProducto = prompt("Error, Ingrese el tipo de producto(arena/cal/cemento)");
         } 
 
-        cantidadBolsas = parseInt(prompt("Ingrese cantidad de bolsas")); 
-        while(isNaN(cantidadBolsas) || cantidadBolsas < 0)
+        cantidadBolsas = parseInt(prompt("Ingrese Cantidad de Bolsas (Entre 1 a 1000)")); 
+        while(isNaN(cantidadBolsas) || cantidadBolsas < 1 || cantidadBolsas > 1000)
         {
-            cantidadBolsas = parseInt(prompt("Error,Ingrese cantidad de bolsas"));
+            cantidadBolsas = parseInt(prompt("Ingrese Cantidad de Bolsas (Entre 1 a 1000)")); 
         } 
 
-        precioIngresado = parseInt(prompt("Ingrese el precio")); 
-        while(isNaN(precioIngresado) || precioIngresado < 1)
+        precioPorBolsa = parseFloat(prompt("Ingrese el precio de las Bolsas (Entre 1 a 10000)")); 
+        while(isNaN(precioPorBolsa) || precioPorBolsa < 1 || precioPorBolsa > 10000)
         {
-            precioIngresado = parseInt(prompt("Error, Ingrese el precio"));
+            precioPorBolsa = parseFloat(prompt("Ingrese el precio de las Bolsas (Entre 1 a 10000)"));
         } 
 
-        if(tipoBolsa == "arena")
+        // Punto A
+        acumuladorPrecio = acumuladorPrecio + (precioPorBolsa*cantidadBolsas); 
+        acumuladorBolsas = acumuladorBolsas + cantidadBolsas; 
+
+        switch(tipoProducto)
         {
-            cantidadArena = cantidadArena + cantidadBolsas; 
-            precioArena = precioArena + precioIngresado; 
-        }else if(tipoBolsa == "cal")
+            case "arena": 
+                contadorTotalArena = contadorTotalArena + cantidadBolsas;  
+                break;  
+            case "cal": 
+                contadorTotalCal = contadorTotalCal + cantidadBolsas; 
+                break;
+            case "cemento": 
+                contadorTotalCemento = contadorTotalCemento + cantidadBolsas; 
+                break;  
+        }
+
+        // Punto D
+        if(banderaBolsaMasCaro == true || precioBolsaMasCaro < precioPorBolsa)
         {
-            cantidadCal = cantidadCal + cantidadBolsas;
-            precioCal = precioCal + precioIngresado; 
-        }else{
-            cantidadCemento = cantidadCemento + cantidadBolsas;
-            precioCemento = precioCemento + precioIngresado; 
+            precioBolsaMasCaro = precioPorBolsa; 
+            tipoBolsaMasCaro = tipoProducto; 
+            banderaBolsaMasCaro = false;
         } 
 
-        /*if(cantidadBolsas > 9 && cantidadBolsas < 30)
-        {
-            porcentaje = -15; 
-        }else if(cantidadBolsas > 29)
-        {
-            porcentaje = -25; 
-        }else{
-            porcentaje = 0; 
-        } */
+        respuesta = prompt("Desea seguir Ingresando Productos? si/no"); 
+    } // FIN WHILE  
 
-        acumuladorCantidadBolsas = acumuladorCantidadBolsas + cantidadBolsas; 
-        acumuladorPrecio = acumuladorPrecio + precioIngresado; 
-
-        respuesta = prompt("¿Desea seguir ingresando productos? si/no"); 
-    } // Fin While Main 
-
-    
-    if(acumuladorCantidadBolsas > 10 && acumuladorCantidadBolsas < 30)
+    //Punto C
+    if(contadorTotalArena > contadorTotalCal && contadorTotalArena > contadorTotalCemento)
     {
-        porcentaje = -15; 
-    }else if(acumuladorCantidadBolsas > 30)
+        mayorCantidadBolsas = "Arena";
+    }else if(contadorTotalCal > contadorTotalArena || contadorTotalCal >= contadorTotalCemento)
+    {
+        mayorCantidadBolsas = "Cal"; 
+    }else
+    {
+        mayorCantidadBolsas = "Cemento"; 
+    }
+
+    // Definicion Porcentajes
+    if(acumuladorBolsas > 29)
     {
         porcentaje = -25; 
-    }else{
+    }else if (acumuladorBolsas > 9)
+    {
+        porcentaje = -15; 
+    }else
+    {
         porcentaje = 0; 
     } 
 
-    if(porcentaje = -15 || porcentaje == -25)
+    if(porcentaje != 0)
     {
-        calculoDescuento = acumuladorPrecio*porcentaje/100; 
-        totalDescuento = acumuladorPrecio + calculoDescuento; 
-    }
-   
-    if(cantidadArena > cantidadCemento && cantidadArena > cantidadCal)
-    {
-        mayorCantidadBolsas = "Arena"
-    }else if(cantidadCemento > cantidadCal && cantidadCemento >= cantidadArena)
-    {
-        mayorCantidadBolsas = "Cemento"
-    }else{
-        mayorCantidadBolsas = "Cal"
-    } 
-
-    if(precioArena > precioCemento && precioArena > precioCal)
-    {
-        mayorPrecioBolsas = "Arena"
-    }else if(precioCemento > precioCal && precioCemento >= precioArena)
-    {
-        mayorPrecioBolsas = "Cemento"
+        // Punto B 
+        importeTotalDescuento = acumuladorPrecio + (acumuladorPrecio*porcentaje/100); 
+        mensaje = "El importe con Descuento es: $" + importeTotalDescuento + "<br>"; 
     }else
     {
-        mayorPrecioBolsas = "Cal"
+        mensaje = "No se aplico Descuento" + "<br>"; 
     } 
 
-    if(porcentaje == 0)
-    {
-        totalDescuento = "No hubo descuentos aplicados";
-    }
-
-    document.write("El total a pagar sin impuesto es: " + acumuladorPrecio + "<br>"); 
-    document.write("El total a pagar con descuento aplicado es " + totalDescuento + "<br>");
+    document.write("El importe total a pagar sin descuento es: $" + acumuladorPrecio + "<br>"); 
+    document.write(mensaje); 
     document.write("El tipo con mas cantidad de bolsas es: " + mayorCantidadBolsas + "<br>"); 
-    document.write("El tipo mas caro es: " + mayorPrecioBolsas);  
+    document.write("El tipo mas caro es: " + tipoBolsaMasCaro + " con $" + precioBolsaMasCaro); 
 }

@@ -32,12 +32,10 @@ function mostrar()
 			} 
 			break; 
 		case "Otoño": 
-			if(destino == "Mar del plata" || destino == "Cataratas" || destino == "Bariloche" || destino == "Cordoba"){
-				mensaje = "Se viaja";
-			} 
+			mensaje = "Se viaja";
 			break; 
 		case "Primavera": 
-			if(destino == "Mar del plata" || destino == "Cataratas" || destino == "Cordoba"){
+			if(destino != "Bariloche"){
 				mensaje = "Se viaja"; 
 			}else{
 				mensaje = "No se viaja";

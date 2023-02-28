@@ -15,7 +15,7 @@ function CalcularPrecio()
     // txtIdprecioDescuento 
 
     // Variables 
-   /* let empresa; 
+    let empresa; 
     let lamparitas; 
     let porcentaje; 
     let precioBase = 35;  
@@ -68,11 +68,11 @@ function CalcularPrecio()
     // PUNTO E 
     if(precioFinal >= 120){
         impuesto = precioFinal*aumento/100; 
-        precioImpuesto = precioFinal + aumento; 
+        precioImpuesto = precioFinal + impuesto;  
         mensaje = "Usted pago $" + impuesto + " de IIBB, siendo $" + precioImpuesto + " el impuesto que se pago.";
         alert(mensaje); 
     }
-    document.getElementById("txtIdprecioDescuento").value = precioFinal; */ 
+    document.getElementById("txtIdprecioDescuento").value = precioFinal; 
 
     // Ejercicio "Switch Marcas" "IF Cantidad"; 
     /* let porcentaje; 
@@ -105,9 +105,7 @@ function CalcularPrecio()
                 porcentaje = -15;
             }else{
                 porcentaje = 0;
-            }
-            calculoDescuento = precioVer*porcentaje/100; 
-            calculoFinal = precioVer + calculoDescuento; 
+            } 
             break;
         case "FelipeLamparas": 
             if(lamparitas >= 6){
@@ -120,9 +118,7 @@ function CalcularPrecio()
                 porcentaje = -10;
             }else{
                 porcentaje = 0;
-            }
-            calculoDescuento = precioVer*porcentaje/100; 
-            calculoFinal = precioVer + calculoDescuento;  
+            } 
             break; 
         case "JeLuz": 
             if(lamparitas > 5){
@@ -136,8 +132,6 @@ function CalcularPrecio()
             }else{
                 porcentaje = 0;
             } 
-            calculoDescuento = precioVer*porcentaje/100; 
-            calculoFinal = precioVer + calculoDescuento; 
             break; 
         case "HazIluminacion": 
             if(lamparitas > 5){
@@ -150,9 +144,7 @@ function CalcularPrecio()
                 porcentaje = -5;
             }else{
                 porcentaje = 0;
-            }
-            calculoDescuento = precioVer*porcentaje/100; 
-            calculoFinal = precioVer + calculoDescuento;  
+            } 
             break;
         case "Osram": 
             if(lamparitas > 5){
@@ -165,12 +157,13 @@ function CalcularPrecio()
                 porcentaje = -5;
             }else{
                 porcentaje = 0;
-            }
-            calculoDescuento = precioVer*porcentaje/100; 
-            calculoFinal = precioVer + calculoDescuento;  
+            } 
             break;   
     }                
     
+    calculoDescuento = precioVer*porcentaje/100; 
+    calculoFinal = precioVer + calculoDescuento;  
+
     if(calculoFinal >= 120){
         ingresoBruto = calculoFinal*aumento/100; 
         ingresoFinal = calculoFinal + ingresoBruto; 
@@ -223,6 +216,11 @@ function CalcularPrecio()
                 porcentaje = -5;
             }
             break; 
+        case 2: 
+        case 1: 
+        case 0: 
+            porcentaje = 0; 
+            break; 
         default: 
             if(lamparitas >= 6){
                 porcentaje = -50;
@@ -238,11 +236,11 @@ function CalcularPrecio()
         mensaje = "Usted pago $" + ingresoBruto + " de IIBB, siendo $" + ingresoFinal + " el impuesto que se pago."; 
         alert(mensaje);
     } 
-    document.getElementById("txtIdprecioDescuento").value = calculoFinal; */ 
+    document.getElementById("txtIdprecioDescuento").value = calculoFinal;  */ 
     // Fin EJERCICIO "Switch Cantidad" "IF Marcas" 
 
     // Inicio Ejercicio "TODO SWITCH" 
-    let porcentaje; 
+    /* let porcentaje; 
     let precioBase = 35; 
     let aumento = 10; 
     let lamparitas; 
@@ -295,6 +293,11 @@ function CalcularPrecio()
                     porcentaje = -5;
             } 
             break; 
+        case 2: 
+        case 1: 
+        case 0: 
+            porcentaje = 0; 
+            break; 
         default: 
             switch(empresa)
             {
@@ -312,7 +315,7 @@ function CalcularPrecio()
         mensaje = "Usted pago $" + ingresoBruto + " de IIBB, siendo $" + ingresoFinal + " el impuesto que se pago."; 
         alert(mensaje);
     } 
-    document.getElementById("txtIdprecioDescuento").value = calculoFinal; 
+    document.getElementById("txtIdprecioDescuento").value = calculoFinal; */
     // FIN EJERCICIO TODO SWITCH 
 }
 

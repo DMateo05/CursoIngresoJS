@@ -9,8 +9,8 @@ function mostrar()
 	let numeroIngresado; 
 	let sumaPositivos;
 	let multiplicacionNegativos; 
+	let mensaje
 	 
-
 	contador=0;
 	sumaPositivos=0;
 	multiplicacionNegativos=1;
@@ -28,13 +28,20 @@ function mostrar()
 		if(numeroIngresado > 0)
 		{
 			sumaPositivos = sumaPositivos + numeroIngresado; 
-		}else
+		}else if(numeroIngresado < 0)
 		{
 			multiplicacionNegativos = numeroIngresado*multiplicacionNegativos; 
 		} 
 		respuesta = prompt("desea continuar? si/no") 
 	} // Fin While
 
-	document.getElementById("txtIdSuma").value= sumaPositivos;
-	document.getElementById("txtIdProducto").value= multiplicacionNegativos;
+	document.getElementById("txtIdSuma").value= sumaPositivos; 
+	if(numeroIngresado < 0)
+	{
+		document.getElementById("txtIdProducto").value= multiplicacionNegativos;
+	}else
+	{
+		mensaje = "No ingreso numero negativo" 
+		document.getElementById("txtIdProducto").value= mensaje; 
+	}
 }

@@ -9,11 +9,11 @@ la Marca y el fabricante.
 Se debe Informar al usuario lo siguiente:
 a) Del más caro de los jabones, la cantidad de unidades y el fabricante
 b) Del tipo de producto con más unidades en total de la compra, el promedio por compra
-c) Cuántas unidades de Barbijos se compraron en total 
+c) Cuántas unidades de Barbijos se compraron en total
 */
 function mostrar()
 {
-	let tipoProducto; 
+    /*let tipoProducto; 
     let precioProducto; 
     let cantidadProducto; 
     let marcaProducto; 
@@ -26,21 +26,24 @@ function mostrar()
     let acumuladorJabon; 
     let mayorTipo; 
     let promedioTotal; 
-    let alcoholMasBarato; 
-    let cantidadAlcoholMasBarato; 
-    let fabricanteAlcoholMasBarato; 
-    let banderaAlcohol; 
+    let jabonesMasCaro; 
+    let cantidadJabonesMasCaro; 
+    let fabricanteJabonesMasCaro; 
+    let banderaJabones; 
 
     acumuladorAlcohol = 0; 
+    cantidadAlcohol = 0; 
+    cantidadBarbijo = 0; 
+    cantidadJabon = 0; 
     acumuladorBarbijo = 0; 
     acumuladorJabon = 0; 
-    banderaAlcohol = true; 
+    banderaJabones = true; 
     
 
     for(let i = 0;i < 5;i++)
     {
         tipoProducto = prompt("Ingrese el tipo de producto (barbijo/alcohol/jabon)");
-        while(!isNaN(tipoProducto) || tipoProducto != "barbijo" && tipoProducto != "alcohol" && tipoProducto != "jabon")
+        while(tipoProducto != "barbijo" && tipoProducto != "alcohol" && tipoProducto != "jabon")
         {
             tipoProducto = prompt("Error, Ingrese el tipo de producto (barbijo/alcohol/jabon)");
         } 
@@ -63,33 +66,36 @@ function mostrar()
         switch(tipoProducto)
         {
             case "barbijo": 
-                acumuladorBarbijo += cantidadProducto;
+                // Punto C
+                acumuladorBarbijo = acumuladorBarbijo + cantidadProducto; 
                 cantidadBarbijo = cantidadBarbijo + 1;
                 break; 
             case "alcohol": 
-                acumuladorAlcohol += cantidadProducto; 
-                cantidadAlcohol = cantidadAlcohol + 1;  
-
-                if(banderaAlcohol == true || alcoholMasBarato > precioProducto)
-                {
-                    alcoholMasBarato = precioProducto; 
-                    cantidadAlcoholMasBarato = cantidadProducto; 
-                    fabricanteAlcoholMasBarato = fabricanteProducto;  
-                    banderaAlcohol = false; 
-                }
+                acumuladorAlcohol = acumuladorAlcohol + cantidadProducto; 
+                cantidadAlcohol = cantidadAlcohol + 1; 
                 break; 
             case "jabon": 
-                acumuladorJabon += cantidadProducto; 
+                acumuladorJabon = acumuladorJabon + cantidadProducto; 
                 cantidadJabon = cantidadJabon + 1; 
+
+                // Punto A 
+                if(banderaJabones == true || jabonesMasCaro < precioProducto)
+                {
+                    jabonesMasCaro = precioProducto; 
+                    cantidadJabonesMasCaro = cantidadProducto; 
+                    fabricanteJabonesMasCaro = fabricanteProducto;  
+                    banderaJabones = false; 
+                }
                 break;
         }   
-    } 
+    } // FIN FOR 
 
+    // PUNTO B 
     if(acumuladorAlcohol > acumuladorJabon && acumuladorAlcohol > acumuladorBarbijo)
     {
         mayorTipo = "Alcohol"; 
-        promedioTotal = acumuladorAlcohol/cantidadAlcohol;
-    }else if(cantidadJabon > cantidadBarbijo && cantidadJabon >= cantidadBarbijo)
+        promedioTotal = acumuladorAlcohol/cantidadAlcohol; 
+    }else if(acumuladorJabon > acumuladorBarbijo && acumuladorJabon >= acumuladorAlcohol)
     {
         mayorTipo = "Jabon"; 
         promedioTotal = acumuladorJabon/cantidadJabon;
@@ -99,7 +105,117 @@ function mostrar()
         promedioTotal = acumuladorBarbijo/cantidadBarbijo;
     }
 
-    document.write("El más barato de los alcoholes es: " + alcoholMasBarato + " y la cantidad es: " + cantidadAlcoholMasBarato + " y el fabricante es: " + fabricanteAlcoholMasBarato + "<br>"); 
+    document.write("El más caro de los jabones es: " + jabonesMasCaro + " y la cantidad es: " + cantidadJabonesMasCaro + " y el fabricante es: " + fabricanteJabonesMasCaro + "<br>"); 
     document.write("El tipo con mayor unidades es: " + mayorTipo + " y el promedio por compra es: " + promedioTotal + "<br>"); 
-    document.write("La cantidad de unidades de jabones que hay es: " + cantidadBarbijo); 
+    document.write("La cantidad de unidades de barbijos que se compraron es: " + acumuladorBarbijo); */ 
+
+    // INICIO EJERCICIO 1 RECUPERATORIO BIS 
+    /* 
+    De 7 personas que ingresan al hospital se deben tomar y validar los siguientes datos:
+    nombre, altura, peso y sexo.
+    a)Informar la cantidad de personas de sexo femenino. 
+    b)La altura promedio en total de pacientes.
+    c)El nombre del hombre con menos peso(si lo hay).
+    d)De la persona no binaria, el más flaco. 
+    Pedir datos por prompt y mostrar por document.write o console.log 
+    */  
+
+    let sexoIngresado; 
+    let alturaIngresada; 
+    let pesoIngresado; 
+    let nombreIngresado
+
+    let contadorPersonasSexoFemenino; 
+    let acumuladorAlturaPacientes; 
+    let contadorPacientes; 
+    let promedioTotalAltura; 
+    let banderaHombreMenosPeso; 
+    let hombreConMenosPeso; 
+    let pesoHombreConMenosPeso; 
+    let banderaNoBinariaFlaco; 
+    let noBinariaMasFlaco; 
+    let pesoNoBinariaMasFlaco; 
+    let contadorHombres; 
+    let contadorNoBin; 
+
+    contadorPersonasSexoFemenino = 0; 
+    acumuladorAlturaPacientes = 0; 
+    contadorPacientes = 0; 
+    contadorNoBin = 0;
+    contadorHombres = 0; 
+    banderaHombreMenosPeso = true; 
+    banderaNoBinariaFlaco = true; 
+
+
+    for(let i = 0;i < 7;i++)
+    { 
+
+        nombreIngresado = prompt("Ingrese su nombre"); 
+
+        sexoIngresado = prompt("Ingrese su sexo (f/m/nb)");
+        while(sexoIngresado != "f" && sexoIngresado != "m "&& sexoIngresado != "nb")
+        {
+            sexoIngresado = prompt("Ingrese su sexo (f/m/nb)")
+        }  
+
+        alturaIngresada = parseFloat(prompt("Ingrese su altura (En centimentros)"));
+        while(isNaN(alturaIngresada) || alturaIngresada < 25|| alturaIngresada > 250)
+        {
+            alturaIngresada = parseFloat(prompt("Error, Ingrese su altura (En centimentros)"));
+        } 
+
+        pesoIngresado = parseFloat(prompt("Ingrese su peso (Hasta 200kg)"));
+        while(isNaN(pesoIngresado) || pesoIngresado < 5|| pesoIngresado > 200)
+        {
+            pesoIngresado = parseFloat(prompt("Error, Ingrese su peso (Hasta 200kg)"));
+        } 
+
+        acumuladorAlturaPacientes = acumuladorAlturaPacientes + alturaIngresada; 
+        contadorPacientes = contadorPacientes + 1; 
+
+        switch(sexoIngresado)
+        {
+            case "f": 
+                contadorPersonasSexoFemenino = contadorPersonasSexoFemenino + 1; 
+                break; 
+            case "m": 
+                contadorHombres = contadorHombres + 1; 
+                if(banderaHombreMenosPeso == true || pesoHombreConMenosPeso < pesoIngresado)
+                {
+                    hombreConMenosPeso = nombreIngresado; 
+                    pesoHombreConMenosPeso = pesoIngresado; 
+                    banderaHombreMenosPeso = false;
+                }
+                break; 
+            case "nb": 
+                contadorNoBin = contadorNoBin + 1; 
+                if(banderaNoBinariaFlaco == true || pesoNoBinariaMasFlaco < pesoIngresado)
+                {
+                    noBinariaMasFlaco = nombreIngresado
+                    pesoNoBinariaMasFlaco = pesoIngresado; 
+                    banderaNoBinariaFlaco = false; 
+                }
+                break;
+        }
+
+    } // FIN FOR 
+
+    promedioTotalAltura = acumuladorAlturaPacientes/contadorPacientes; 
+
+    document.write("La cantidad de personas de sexo femenino es: " + contadorPersonasSexoFemenino + "<br"); 
+    document.write("La altura promedio entre los pacientes es: " + promedioTotalAltura + "<br"); 
+    if(contadorHombres == 0)
+    {
+        document.write("No se ingresaron hombres" + "<br"); 
+    }else
+    {
+        document.write("El nombre del hombre con menos peso es: " + hombreConMenosPeso + " y su peso es: " + pesoHombreConMenosPeso + "<br"); 
+    }
+    if(contadorNoBin == 0)
+    {
+        document.write("No se ingresaron de ese sexo");
+    }else
+    {
+        document.write("La persona no binaria con el menor peso es: " + noBinariaMasFlaco + " y su peso es: " + pesoNoBinariaMasFlaco + "<br");
+    } // FIN EJERCICIO 
 }

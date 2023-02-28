@@ -18,5 +18,5 @@ function mostrar()
 
 	// Muestro Mensaje (Si el usuario coloco bien la clave) 
 	mensaje = "Felicidades, ingreso bien la clave"; 
-	alert(mensaje); 
+	alert(mensaje); // Ejercicio 3 //EL NOT SIRVE PARA NEGAR FLAGS, TRUE O FALSE, SE USA PARA NEGAR BOOLEANOS
 }

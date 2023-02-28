@@ -67,16 +67,19 @@ function mostrar()
 
 	promedioPositivos = sumaPositivo/contadorPositivos; 
 	promedioNegativo = sumaNegativos/contadorNegativos; 
+	if(contadorNegativos == 0)
+	{
+		promedioNegativo = "No se puede dividir entre 0"
+	}
 	diferencia = sumaPositivo - sumaNegativos;
 
-	document.write("la suma de negativos es :"+sumaNegativos+ "<br>"); 
-	document.write("la suma de positivos es :"+sumaPositivo+ "<br>"); 
-	document.write("la cantidad de positivos es :"+contadorPositivos+ "<br>"); 
-	document.write("la cantidad de negativos es :"+contadorNegativos+ "<br>");  
-	document.write("la cantidad de ceros es :"+contadorCeros+ "<br>"); 
-	document.write("la cantidad de pares es :"+contadorPares+ "<br>"); 
-	document.write("promedio de positivos es :"+promedioPositivos+ "<br>"); 
-	document.write("promedio de negativos es :"+promedioNegativo+ "<br>"); 
-	document.write("diferencia entre positivos y negativos es :"+diferencia + "<br>"); 
-	//document.write("la cantidad de ceros es :"+contadorCeros+ "<br>"); 
-}//FIN DE LA FUNCIÓN
+	document.write("la suma de negativos es : "+ sumaNegativos + "<br>"); 
+	document.write("la suma de positivos es :"+ sumaPositivo + "<br>"); 
+	document.write("la cantidad de positivos es : "+ contadorPositivos + "<br>"); 
+	document.write("la cantidad de negativos es : "+ contadorNegativos + "<br>");  
+	document.write("la cantidad de ceros es : "+ contadorCeros + "<br>"); 
+	document.write("la cantidad de pares es : " + contadorPares + "<br>"); 
+	document.write("promedio de positivos es : "+ promedioPositivos + "<br>"); 
+	document.write("promedio de negativos es : "+ promedioNegativo + "<br>"); 
+	document.write("diferencia entre positivos y negativos es : "+ diferencia + "<br>"); 
+}

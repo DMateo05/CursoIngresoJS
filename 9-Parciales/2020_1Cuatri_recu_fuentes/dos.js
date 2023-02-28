@@ -7,119 +7,116 @@ Precio por bolsa (más de cero y menor a 10000 ),
 al terminar la compra el cliente accede a un descuento segun las bolsas en total
 Si compro más de 15 bolsas en total tenes 10% de descuento sobre el total a pagar.
 Si compro más de 45 bolsas en total tenes 30% de descuento sobre el total a pagar.
-a)
-El importe total a pagar , bruto sin descuento y...
-b)
-el importe total a pagar con descuento(solo si corresponde)
-d)
-Informar la bolsa mas cara de Cal y la mas barata de Cemento.
-e)
-Cuantas bolsas de arena se compraron en total, y el promedio por compra.
+a)El importe total a pagar , bruto sin descuento y...
+b)el importe total a pagar con descuento(solo si corresponde)
+d)Informar la bolsa mas cara de Cal y la mas barata de Cemento.
+e)Cuantas bolsas de arena se compraron en total, y el promedio por compra.
 */
-function mostrar()
+function mostrar() 
 {
-  let tipoBolsa; 
-  let cantidadBolsa; 
-  let precioBolsa; 
-  let descuentoAplicado; 
-  
-  let contadorArena; 
-  let contadorCemento; 
-  let contadorCal; 
+    let respuesta; 
+    let tipoProducto; 
+    let cantidadBolsas; 
+    let precioPorBolsa; 
 
-  let banderaMasCaro; 
-  let tipoMasCaro; 
-  let precioMasCaro;
-  let importeTotal; 
-  let importeTotalDescuento; 
-  let respuesta; 
+    let porcentaje; 
+    let acumuladorPrecio; 
+    let acumuladorBolsas; 
+    let contadorTotalArena;  
+    let precioBolsaMasCaroCal;  
+    let banderaBolsaMasCaroCal; 
+    let mensaje; 
+    let importeTotalDescuento;  
+    let banderaBolsaMasBarataCemento; 
+    let bolsaMasBarataCemento; 
+    let acumuladorBolsasArena; 
+    let promedioBolsasArena; 
 
-  let acumuladorBolsas; 
-  let acumuladorPrecio; 
+    acumuladorPrecio = 0; 
+    acumuladorBolsasArena = 0; 
+    acumuladorBolsas = 0; 
+    contadorTotalArena = 0;   
+    banderaBolsaMasCaroCal = true;  
+    banderaBolsaMasBarataCemento = true; 
+    respuesta = "si"; 
 
-  acumuladorBolsas = 0; 
-  acumuladorPrecio = 0; 
-  contadorArena = 0; 
-  contadorCal = 0; 
-  contadorCemento = 0; 
-  banderaMasCaro  = true; 
-  respuesta = "si"; 
-
-  while(respuesta == "si") 
-  { 
-      // Tomo el Dato y Valido el Tipo de Bolsa
-      tipoBolsa = prompt("Ingrese el tipo de bolsa (arena/cal/cemento)"); 
-      while(!isNaN(tipoBolsa) || tipoBolsa != "arena" && tipoBolsa != "cal" && tipoBolsa != "cemento")
-      {
-          tipoBolsa = prompt("Error, Ingrese el tipo de bolsa (arena/cal/cemento)");
-      } 
-
-      // Tomo el Dato y Valido la cantidad de bolsas
-      cantidadBolsa = prompt("Ingrese la cantidad de Bolsas (Minimo 1 Maximo 100)"); 
-      cantidadBolsa = parseInt(cantidadBolsa);
-      while(isNaN(cantidadBolsa) || cantidadBolsa < 1 || cantidadBolsa > 100)
-      {
-          cantidadBolsa = prompt("Error, Ingrese la cantidad de Bolsas (Minimo 1 Maximo 100)"); 
-          cantidadBolsa = parseInt(cantidadBolsa);
-      } 
-
-      // Tomo el Dato y Valido el precio de las bolsas
-      precioBolsa = prompt("Ingrese el precio de las bolsas (Minimo 1, Hasta 10000)"); 
-      precioBolsa = parseInt(precioBolsa);
-      while(isNaN(precioBolsa) || precioBolsa < 1 || precioBolsa > 10000)
-      {
-          precioBolsa = prompt(" Error, Ingrese el precio de las bolsas (Hasta 10000)"); 
-          precioBolsa = parseInt(precioBolsa);
-      } 
-
-      acumuladorPrecio = acumuladorPrecio + (precioBolsa * cantidadBolsa); 
-      acumuladorBolsas = acumuladorBolsas + cantidadBolsa; 
-      
-      // Contador Cada tipo Bolsas 
-      switch(tipoBolsa)
-      {
-          case "arena": 
-              contadorArena = contadorArena + cantidadBolsa;
-              break; 
-          case "cal": 
-              contadorCal = contadorCal + cantidadBolsa;
-              break; 
-          case "cemento": 
-              contadorCemento = contadorCemento + cantidadBolsa;
-              break;
-      }  
-
-      if(banderaMasCaro == true || precioMasCaro < precioBolsa)
-      {
-          tipoMasCaro = tipoBolsa; 
-          precioMasCaro = precioBolsa; 
-          banderaMasCaro = false;
-      }
-
-      // Pregunta Respuesta 
-      respuesta = prompt("Desea seguir ingresando productos? si/no");
-  } // FIN WHILE 
-
-
-    if(contadorArena > contadorCal && contadorArena > contadorCemento)
+    while(respuesta == "si")
     {
-        tipoMasCaro = "Arena"
-    }else if(contadorCal > contadorCemento && contadorCal >= contadorArena)
-    {
-        tipoMasCaro = "Cal"
-    }else{
-        tipoMasCaro = "Cemento"
-    }
-  // Calculo la cantidad de bolsas introducidas para aplicar el descuento 
-  if(cantidadBolsa > 44)
-  {
-      descuentoAplicado = -30;  
-  }else if(cantidadBolsa > 14)
-  {
-      descuentoAplicado = -10; 
-  }else
-  {
-      descuentoAplicado = 0; 
-  } 
+        tipoProducto = prompt("Ingrese el tipo de producto (arena/cal/cemento)"); 
+        while(tipoProducto != "arena" && tipoProducto != "cal" && tipoProducto != "cemento")
+        {
+            tipoProducto = prompt("Error, Ingrese el tipo de producto(arena/cal/cemento)");
+        } 
 
+        cantidadBolsas = parseInt(prompt("Ingrese Cantidad de Bolsas (Entre 1 a 1000)")); 
+        while(isNaN(cantidadBolsas) || cantidadBolsas < 1 || cantidadBolsas > 1000)
+        {
+            cantidadBolsas = parseInt(prompt("Ingrese Cantidad de Bolsas (Entre 1 a 1000)")); 
+        } 
+
+        precioPorBolsa = parseFloat(prompt("Ingrese el precio de las Bolsas (Entre 1 a 10000)")); 
+        while(isNaN(precioPorBolsa) || precioPorBolsa < 1 || precioPorBolsa > 10000)
+        {
+            precioPorBolsa = parseFloat(prompt("Ingrese el precio de las Bolsas (Entre 1 a 10000)"));
+        } 
+
+        // Punto A
+        acumuladorPrecio = acumuladorPrecio + (precioPorBolsa*cantidadBolsas); 
+        acumuladorBolsas = acumuladorBolsas + cantidadBolsas; 
+
+        switch(tipoProducto)
+        {
+            case "arena": 
+                // Punto E
+                acumuladorBolsasArena = acumuladorBolsasArena + cantidadBolsas; 
+                contadorTotalArena = contadorTotalArena + 1;  
+                promedioBolsasArena = acumuladorBolsasArena/contadorTotalArena;
+                break;  
+            case "cal": 
+                // Punto D
+                if(banderaBolsaMasCaroCal == true || precioBolsaMasCaroCal < precioPorBolsa)
+                {
+                    precioBolsaMasCaroCal = precioPorBolsa;  
+                    banderaBolsaMasCaroCal = false;
+                } 
+                break;
+            case "cemento": 
+                // Punto D
+                if(banderaBolsaMasBarataCemento == true || banderaBolsaMasBarataCemento > precioPorBolsa)
+                {
+                    bolsaMasBarataCemento= precioPorBolsa;  
+                    banderaBolsaMasBarataCemento = false;
+                } 
+                break;  
+        }
+
+        respuesta = prompt("Desea seguir Ingresando Productos? si/no"); 
+    } // FIN WHILE  
+
+    // Definicion Porcentajes
+    if(acumuladorBolsas > 44)
+    {
+        porcentaje = -30; 
+    }else if (acumuladorBolsas > 14)
+    {
+        porcentaje = -10; 
+    }else
+    {
+        porcentaje = 0; 
+    } 
+
+    if(porcentaje != 0)
+    {
+        // Punto B 
+        importeTotalDescuento = acumuladorPrecio + (acumuladorPrecio*porcentaje/100); 
+        mensaje = "El importe con Descuento es: $" + importeTotalDescuento + "<br>"; 
+    }else
+    {
+        mensaje = "No se aplico Descuento" + "<br>"; 
+    } 
+
+    document.write("El importe total a pagar sin descuento es: $" + acumuladorPrecio + "<br>"); 
+    document.write(mensaje); 
+    document.write("La bolsa mas cara de cal es: $" + precioBolsaMasCaroCal + " y la bolsa mas barata de cemento es: $" + bolsaMasBarataCemento + "<br>"); 
+    document.write("Se compraron: " + acumuladorBolsasArena + " bolsas de arena en total y el promedio de compra es: " + promedioBolsasArena);
 }

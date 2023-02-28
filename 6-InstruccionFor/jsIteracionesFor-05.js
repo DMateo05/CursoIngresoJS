@@ -50,13 +50,13 @@ function mostrar()
 	for(i = 0; i < 7;i++)
 	{
 		notaIngresada = parseInt(prompt("Ingrese su Nota")); 
-		while(isNaN(notaIngresada) || (notaIngresada < 0 && notaIngresada > 10))
+		while(isNaN(notaIngresada) || (notaIngresada < 0 || notaIngresada > 10))
 		{
 			notaIngresada = parseInt(prompt("Error, Ingrese su Nota"));
 		} 
 
 		sexoIngresado = prompt("Ingrese su Sexo (f/m/b)")
-		while(!isNaN(sexoIngresado) && (sexoIngresado != "f" || sexoIngresado != "m" || sexoIngresado != "b"))
+		while(!isNaN(sexoIngresado) && sexoIngresado != "f" && sexoIngresado != "m" && sexoIngresado != "b")
 		{
 			sexoIngresado = prompt("Error, Ingrese su Sexo (f/m/b)")
 		} 
