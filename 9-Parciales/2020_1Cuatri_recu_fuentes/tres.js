@@ -227,7 +227,9 @@ function mostrar()
 			personaTitularMenosPasajeros = nombrePasajeroTitular; 
 			cantidadPersonasMenosTitular = cantidadPasajerosViaja; 
 			banderaPersonaTitularMenosPasajeros = false; 
-		}
+		} 
+
+		respuesta = prompt("Desea seguir ingresando titulares? si/no"); 
 	} // FIN WHILE  
 
 	if(contadorPersonasAltaTemporada == 0)
